@@ -7,3 +7,7 @@ features_*.npz
 .vscode/
 .DS_Store
 Thumbs.db
+
+# ignore data
+q2/results/
+*.npz
