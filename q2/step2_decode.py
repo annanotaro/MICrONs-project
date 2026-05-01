@@ -7,6 +7,7 @@ from sklearn.model_selection import GroupKFold
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import LinearSVC
 from sklearn.metrics import balanced_accuracy_score
 from sklearn.metrics import confusion_matrix
 
@@ -29,6 +30,8 @@ N_SPLITS = 5
 # Use a smaller matched neuron count for a fast first pass
 N_NEURONS_SUBSAMPLE = 575
 RANDOM_STATE = 42
+N_SEEDS = 10  # number of random subsamplings to average over
+NEURON_COUNTS = [25, 50, 100, 150, 200, 300, 400, 575]  # for neuron-count sweep
 
 print(f"Session: {CHOSEN_SESSION}")
 print(f"Loading features from: {FEATURES_PATH}")
@@ -60,18 +63,12 @@ print(f"groups: {groups.shape}")
 # -------------------------
 # SUBSAMPLE NEURONS
 # -------------------------
-# Use the same number of neurons in each area for a faster and fairer comparison
-rng = np.random.default_rng(RANDOM_STATE)
-
+# Subsampling is done per seed inside the decode loop below
+# (multi-seed averaging stabilises estimates across random subsets)
 for area in AREAS:
-    X = X_by_area[area]
-    n_trials, n_neurons, n_time = X.shape
-
+    n_neurons = X_by_area[area].shape[1]
     n_keep = min(N_NEURONS_SUBSAMPLE, n_neurons)
-    keep_idx = rng.choice(n_neurons, size=n_keep, replace=False)
-
-    X_by_area[area] = X[:, keep_idx, :]
-    print(f"{area}: using {n_keep} neurons")
+    print(f"{area}: will use {n_keep}/{n_neurons} neurons per seed")
 
 # -------------------------
 # GROUPED CV
@@ -83,119 +80,189 @@ gkf = GroupKFold(n_splits=N_SPLITS)
 # -------------------------
 # DECODE OVER TIME
 # -------------------------
-# For each timepoint t, train/test a classifier on X[:, :, t]
-acc_by_area = {}
+# For each timepoint t, train/test LR and SVM on X[:, :, t]
+# Repeated N_SEEDS times with different random neuron subsets
+# acc_seeds[clf][area] -> (N_SEEDS, n_time)
+acc_seeds = {"lr": {}, "svm": {}}
 
 for area in AREAS:
-    X = X_by_area[area]   # (n_trials, n_neurons, n_time)
-    n_trials, n_neurons, n_time = X.shape
+    X_full = X_by_area[area]   # (n_trials, n_neurons, n_time)
+    n_trials, n_neurons, n_time = X_full.shape
 
     print(f"\nDecoding area: {area}")
     print(f"Trials={n_trials}, neurons={n_neurons}, timepoints={n_time}")
 
-    acc_t = np.zeros(n_time, dtype=float)
+    for clf_name in ("lr", "svm"):
+        seeds_acc = np.zeros((N_SEEDS, n_time), dtype=float)
 
-    for t in range(n_time):
-        # Extract population activity at time t
-        Xt = X[:, :, t]   # (n_trials, n_neurons)
+        for s in range(N_SEEDS):
+            # Fresh random neuron subset per seed
+            rng = np.random.default_rng(RANDOM_STATE + s)
+            n_keep = min(N_NEURONS_SUBSAMPLE, n_neurons)
+            keep_idx = rng.choice(n_neurons, size=n_keep, replace=False)
+            X = X_full[:, keep_idx, :]
 
-        fold_accs = []
+            for t in range(n_time):
+                Xt = X[:, :, t]   # (n_trials, n_neurons)
 
-        for train_idx, test_idx in gkf.split(Xt, y, groups=groups):
-            X_train, X_test = Xt[train_idx], Xt[test_idx]
-            y_train, y_test = y[train_idx], y[test_idx]
+                fold_accs = []
+                for train_idx, test_idx in gkf.split(Xt, y, groups=groups):
+                    X_train, X_test = Xt[train_idx], Xt[test_idx]
+                    y_train, y_test = y[train_idx], y[test_idx]
 
-            # Fresh model for each fold
-            clf = make_pipeline(
-                StandardScaler(),
-                LogisticRegression(
-                    penalty="l2",
-                    C=1.0,
-                    class_weight="balanced",
-                    max_iter=2000,
-                    random_state=RANDOM_STATE
-                )
-            )
+                    if clf_name == "lr":
+                        clf = make_pipeline(
+                            StandardScaler(),
+                            LogisticRegression(
+                                penalty="l2", C=1.0, class_weight="balanced",
+                                max_iter=2000, random_state=RANDOM_STATE + s
+                            )
+                        )
+                    else:
+                        clf = make_pipeline(
+                            StandardScaler(),
+                            LinearSVC(
+                                C=1.0, class_weight="balanced",
+                                max_iter=2000, random_state=RANDOM_STATE + s
+                            )
+                        )
 
-            clf.fit(X_train, y_train)
-            y_pred = clf.predict(X_test)
+                    clf.fit(X_train, y_train)
+                    fold_accs.append(balanced_accuracy_score(y_test, clf.predict(X_test)))
 
-            acc = balanced_accuracy_score(y_test, y_pred)
-            fold_accs.append(acc)
+                seeds_acc[s, t] = np.mean(fold_accs)
 
-        acc_t[t] = np.mean(fold_accs)
+            if (s + 1) % 5 == 0:
+                print(f"  {clf_name.upper()} seed {s+1}/{N_SEEDS}  peak={seeds_acc[s].max():.3f}")
 
-        if (t + 1) % 10 == 0 or t == n_time - 1:
-            print(f"  time {t+1}/{n_time}  mean bal acc = {acc_t[t]:.3f}")
+        acc_seeds[clf_name][area] = seeds_acc
+        mean_acc = seeds_acc.mean(axis=0)
+        print(f"  {clf_name.upper()} {area}: peak={mean_acc.max():.3f} ± {seeds_acc.max(axis=1).std():.3f}")
 
-    acc_by_area[area] = acc_t
-    print(f"{area} done. Peak acc = {acc_t.max():.3f}")
+# convenience: mean and std across seeds per area
+acc_by_area    = {area: acc_seeds["lr"][area].mean(axis=0) for area in AREAS}  # LR mean (backward-compat)
+acc_std_by_area = {area: acc_seeds["lr"][area].std(axis=0) for area in AREAS}
 
 # -------------------------
 # CONFUSION MATRICES
 # -------------------------
-print("\nComputing confusion matrices (last timepoint)...")
+# At peak timepoint (from mean LR curve), summed across seeds for stability
+print("\nComputing confusion matrices (peak timepoint, LR + SVM)...")
 
-cm_by_area = {}
+labels = np.unique(y)
+n_classes = len(labels)
+cm_by_area = {"lr": {}, "svm": {}}
 
 for area in AREAS:
-    X = X_by_area[area]
-    Xt = X[:, :, -1]  # use last timepoint
+    X_full = X_by_area[area]
+    n_trials, n_neurons, n_time = X_full.shape
 
-    y_true_all = []
-    y_pred_all = []
+    # Use peak timepoint from mean LR curve
+    peak_t = acc_by_area[area].argmax()
+    print(f"  {area}: peak_t={peak_t}")
 
-    for train_idx, test_idx in gkf.split(Xt, y, groups=groups):
-        X_train, X_test = Xt[train_idx], Xt[test_idx]
-        y_train, y_test = y[train_idx], y[test_idx]
+    for clf_name in ("lr", "svm"):
+        cm_sum = np.zeros((n_classes, n_classes), dtype=int)
 
-        clf = make_pipeline(
-            StandardScaler(),
-            LogisticRegression(
-                penalty="l2",
-                C=1.0,
-                class_weight="balanced",
-                max_iter=2000,
-                random_state=RANDOM_STATE
-            )
-        )
+        for s in range(N_SEEDS):
+            rng = np.random.default_rng(RANDOM_STATE + s)
+            n_keep = min(N_NEURONS_SUBSAMPLE, n_neurons)
+            keep_idx = rng.choice(n_neurons, size=n_keep, replace=False)
+            Xt = X_full[:, keep_idx, peak_t]
 
-        clf.fit(X_train, y_train)
-        y_pred = clf.predict(X_test)
+            y_true_all, y_pred_all = [], []
+            for train_idx, test_idx in gkf.split(Xt, y, groups=groups):
+                X_train, X_test = Xt[train_idx], Xt[test_idx]
+                y_train, y_test = y[train_idx], y[test_idx]
 
-        y_true_all.extend(y_test)
-        y_pred_all.extend(y_pred)
+                if clf_name == "lr":
+                    clf = make_pipeline(
+                        StandardScaler(),
+                        LogisticRegression(
+                            penalty="l2", C=1.0, class_weight="balanced",
+                            max_iter=2000, random_state=RANDOM_STATE + s
+                        )
+                    )
+                else:
+                    clf = make_pipeline(
+                        StandardScaler(),
+                        LinearSVC(
+                            C=1.0, class_weight="balanced",
+                            max_iter=2000, random_state=RANDOM_STATE + s
+                        )
+                    )
 
-    labels = np.unique(y)
-    cm = confusion_matrix(y_true_all, y_pred_all, labels=labels)
+                clf.fit(X_train, y_train)
+                y_pred = clf.predict(X_test)
+                y_true_all.extend(y_test)
+                y_pred_all.extend(y_pred)
 
-    cm_by_area[area] = cm
+            cm_sum += confusion_matrix(y_true_all, y_pred_all, labels=labels)
 
-    print(f"{area} confusion matrix:\n{cm}")
+        cm_by_area[clf_name][area] = cm_sum
+        print(f"  {clf_name.upper()} {area} CM (summed):\n{cm_sum}")
+
+# -------------------------
+# NEURON COUNT SWEEP
+# -------------------------
+# Accuracy vs number of neurons (LR, mean over time and seeds)
+nc_acc = {}   # area -> (n_counts, N_SEEDS)
+
+for area in AREAS:
+    X_full = X_by_area[area]
+    n_trials, n_neurons, n_time = X_full.shape
+    print(f"\nNeuron sweep {area} ({n_neurons} neurons)")
+
+    results = np.zeros((len(NEURON_COUNTS), N_SEEDS))
+
+    for ni, n_count in enumerate(NEURON_COUNTS):
+        n_keep = min(n_count, n_neurons)
+        for s in range(N_SEEDS):
+            rng = np.random.default_rng(RANDOM_STATE + s)
+            keep_idx = rng.choice(n_neurons, size=n_keep, replace=False)
+            X = X_full[:, keep_idx, :]
+
+            acc_t = np.zeros(n_time)
+            for t in range(n_time):
+                Xt = X[:, :, t]
+                fold_accs = []
+                for train_idx, test_idx in gkf.split(Xt, y, groups=groups):
+                    clf = make_pipeline(
+                        StandardScaler(),
+                        LogisticRegression(
+                            penalty="l2", C=1.0, class_weight="balanced",
+                            max_iter=2000, random_state=RANDOM_STATE + s
+                        )
+                    )
+                    clf.fit(Xt[train_idx], y[train_idx])
+                    fold_accs.append(balanced_accuracy_score(y[test_idx], clf.predict(Xt[test_idx])))
+                acc_t[t] = np.mean(fold_accs)
+
+            results[ni, s] = acc_t.mean()
+
+        print(f"  n={n_keep:4d}: {results[ni].mean():.3f} ± {results[ni].std():.3f}")
+
+    nc_acc[area] = results
 
 # -------------------------
 # SAVE
 # -------------------------
-# Save accuracy vs time curves for each area
-np.savez_compressed(
-    OUT_PATH,
-    acc_V1=acc_by_area["V1"],
-    acc_LM=acc_by_area["LM"],
-    acc_AL=acc_by_area["AL"],
-    acc_RL=acc_by_area["RL"],
-    cm_V1=cm_by_area["V1"],
-    cm_LM=cm_by_area["LM"],
-    cm_AL=cm_by_area["AL"],
-    cm_RL=cm_by_area["RL"],
+save_dict = dict(
     labels=labels,
     n_time=n_time,
-    n_neurons_subsample=N_NEURONS_SUBSAMPLE
+    n_neurons_subsample=N_NEURONS_SUBSAMPLE,
+    neuron_counts=np.array(NEURON_COUNTS),
 )
 
-print(f"\nSaved decoding results to: {OUT_PATH}")
+for area in AREAS:
+    save_dict[f"acc_{area}"]      = acc_by_area[area]              # LR mean (backward-compat)
+    save_dict[f"acc_std_{area}"]  = acc_std_by_area[area]          # LR std
+    save_dict[f"acc_svm_{area}"]  = acc_seeds["svm"][area].mean(axis=0)
+    save_dict[f"acc_svm_std_{area}"] = acc_seeds["svm"][area].std(axis=0)
+    save_dict[f"cm_{area}"]       = cm_by_area["lr"][area]         # LR CM (backward-compat)
+    save_dict[f"cm_svm_{area}"]   = cm_by_area["svm"][area]
+    save_dict[f"nc_acc_mean_{area}"] = nc_acc[area].mean(axis=1)
+    save_dict[f"nc_acc_std_{area}"]  = nc_acc[area].std(axis=1)
 
-# ---------------------------------------------------------------
-# TODO: Add SVM baseline
-# ---------------------------------------------------------------
-# Later: replicate the same pipeline using LinearSVC
-# to check robustness across linear classifiers.
+np.savez_compressed(OUT_PATH, **save_dict)
+print(f"\nSaved decoding results to: {OUT_PATH}")
