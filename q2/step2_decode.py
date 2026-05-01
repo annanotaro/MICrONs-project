@@ -255,12 +255,12 @@ save_dict = dict(
 )
 
 for area in AREAS:
-    save_dict[f"acc_{area}"]      = acc_by_area[area]              # LR mean (backward-compat)
-    save_dict[f"acc_std_{area}"]  = acc_std_by_area[area]          # LR std
-    save_dict[f"acc_svm_{area}"]  = acc_seeds["svm"][area].mean(axis=0)
+    save_dict[f"acc_lr_{area}"]      = acc_by_area[area]
+    save_dict[f"acc_lr_std_{area}"]  = acc_std_by_area[area]
+    save_dict[f"acc_svm_{area}"]     = acc_seeds["svm"][area].mean(axis=0)
     save_dict[f"acc_svm_std_{area}"] = acc_seeds["svm"][area].std(axis=0)
-    save_dict[f"cm_{area}"]       = cm_by_area["lr"][area]         # LR CM (backward-compat)
-    save_dict[f"cm_svm_{area}"]   = cm_by_area["svm"][area]
+    save_dict[f"cm_lr_{area}"]       = cm_by_area["lr"][area]
+    save_dict[f"cm_svm_{area}"]      = cm_by_area["svm"][area]
     save_dict[f"nc_acc_mean_{area}"] = nc_acc[area].mean(axis=1)
     save_dict[f"nc_acc_std_{area}"]  = nc_acc[area].std(axis=1)
 

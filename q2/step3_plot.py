@@ -1,16 +1,22 @@
+import matplotlib
+matplotlib.use("Agg")  # non-interactive backend — saves files without opening windows
 import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 from sklearn.metrics import confusion_matrix
-import matplotlib.pyplot as plt
 
 # -------------------------
 # CONFIG
 # -------------------------
-CHOSEN_SESSION = "7_4"
+import sys
+CHOSEN_SESSION = sys.argv[1] if len(sys.argv) > 1 else "7_4"
+W_ARG = int(sys.argv[2]) if len(sys.argv) > 2 else 1  # window size, e.g. python step3_plot.py 7_4 5
 
 RESULTS_DIR = Path(__file__).parent / "results" / CHOSEN_SESSION
-DATA_PATH = RESULTS_DIR / f"q2_decode_{CHOSEN_SESSION}.npz"
+if W_ARG == 1:
+    DATA_PATH = RESULTS_DIR / f"q2_decode_raw_{CHOSEN_SESSION}.npz"
+else:
+    DATA_PATH = RESULTS_DIR / f"q2_decode_raw_w{W_ARG}_{CHOSEN_SESSION}.npz"
 
 data = np.load(DATA_PATH, allow_pickle=True)
 
@@ -27,6 +33,14 @@ def savefig(name):
     for ext in ("png", "pdf"):
         plt.savefig(OUT_DIR / f"{name}.{ext}", bbox_inches="tight", dpi=150)
     print(f"Saved: {name}")
+    plt.close()
+
+def get_std(key):
+    """Return std array if present, else zeros (for pre-existing files without std keys)."""
+    if key in data:
+        return data[key]
+    base = key.replace("_lr_std_", "_lr_").replace("_svm_std_", "_svm_")
+    return np.zeros(len(data[base]))
 
 # -------------------------
 # PLOT 1: Accuracy vs time — LR per area with std band
@@ -34,8 +48,8 @@ def savefig(name):
 plt.figure(figsize=(10, 6))
 
 for area in areas:
-    acc = data[f"acc_{area}"]
-    std = data[f"acc_std_{area}"]
+    acc = data[f"acc_lr_{area}"]
+    std = get_std(f"acc_lr_std_{area}")
     t = np.arange(len(acc))
     line, = plt.plot(t, acc, label=area, linewidth=2)
     plt.fill_between(t, acc - std, acc + std, alpha=0.20, color=line.get_color())
@@ -56,9 +70,9 @@ fig, axes = plt.subplots(2, 2, figsize=(12, 8), sharey=True, sharex=True)
 axes = axes.flatten()
 
 for ax, area in zip(axes, areas):
-    for clf, color, lbl in [("acc", "#2166ac", "LR"), ("acc_svm", "#d6604d", "SVM")]:
+    for clf, color, lbl in [("acc_lr", "#2166ac", "LR"), ("acc_svm", "#d6604d", "SVM")]:
         acc = data[f"{clf}_{area}"]
-        std = data[f"{clf}_std_{area}"]
+        std = get_std(f"{clf}_std_{area}")
         t = np.arange(len(acc))
         ax.plot(t, acc, color=color, label=lbl, linewidth=2)
         ax.fill_between(t, acc - std, acc + std, color=color, alpha=0.20)
@@ -82,9 +96,9 @@ width = 0.35
 
 fig, ax = plt.subplots(figsize=(7, 5))
 
-for i, (clf, color, lbl) in enumerate([("acc", "#2166ac", "LR"), ("acc_svm", "#d6604d", "SVM")]):
+for i, (clf, color, lbl) in enumerate([("acc_lr", "#2166ac", "LR"), ("acc_svm", "#d6604d", "SVM")]):
     peaks = [data[f"{clf}_{a}"].max() for a in areas]
-    errs  = [data[f"{clf}_std_{a}"][data[f"{clf}_{a}"].argmax()] for a in areas]
+    errs  = [get_std(f"{clf}_std_{a}")[data[f"{clf}_{a}"].argmax()] for a in areas]
     offset = (i - 0.5) * width
     ax.bar(x + offset, peaks, width, label=lbl, color=color, alpha=0.85)
     ax.errorbar(x + offset, peaks, yerr=errs,
@@ -102,28 +116,25 @@ savefig(f"q2_peak_acc_w{WINDOW}")
 plt.show()
 
 # -------------------------
-# PLOT 3: Smoothed accuracy curves
+# PLOT 3: Smoothed accuracy curves (LR and SVM)
 # -------------------------
 def smooth(x, k=5):
     return np.convolve(x, np.ones(k)/k, mode='same')
 
-plt.figure(figsize=(10, 6))
+for clf_key, clf_label, color in [("acc_lr", "LR", "#2166ac"), ("acc_svm", "SVM", "#d6604d")]:
+    plt.figure(figsize=(10, 6))
 
-for area in areas:
-    acc = data[f"acc_{area}"]
-    acc_smooth = smooth(acc, k=5)
-    plt.plot(acc_smooth, label=area)
+    for area in areas:
+        acc = data[f"{clf_key}_{area}"]
+        plt.plot(smooth(acc, k=5), label=area)
 
-plt.axhline(chance, linestyle="--", color="black", label="Chance")
-
-plt.xlabel("Time (frames)")
-plt.ylabel("Balanced accuracy (smoothed)")
-plt.title(f"Q2: Smoothed decoding accuracy over time  [{W_LABEL}]")
-plt.legend()
-
-plt.tight_layout()
-savefig(f"q2_acc_time_smoothed_w{WINDOW}")
-plt.show()
+    plt.axhline(chance, linestyle="--", color="black", label="Chance")
+    plt.xlabel("Time (frames)")
+    plt.ylabel(f"Balanced accuracy — {clf_label} (smoothed)")
+    plt.title(f"Q2: Smoothed decoding accuracy over time — {clf_label}  [{W_LABEL}]")
+    plt.legend()
+    plt.tight_layout()
+    savefig(f"q2_acc_time_smoothed_{clf_key.split('_')[1]}_w{WINDOW}")
 
 # -------------------------
 # PLOT 4: Confusion matrices — LR (top) and SVM (bottom), row-normalised
@@ -133,7 +144,7 @@ n_classes = len(labels)
 
 fig, axes = plt.subplots(2, 4, figsize=(16, 8))
 
-for row, (clf_key, clf_label) in enumerate([("cm", "LR"), ("cm_svm", "SVM")]):
+for row, (clf_key, clf_label) in enumerate([("cm_lr", "LR"), ("cm_svm", "SVM")]):
     for col, area in enumerate(areas):
         ax = axes[row, col]
         cm_raw = data[f"{clf_key}_{area}"].astype(float)
@@ -171,24 +182,26 @@ plt.show()
 # -------------------------
 # PLOT 5: Accuracy vs number of neurons (LR)
 # -------------------------
-nc = data["neuron_counts"]
-area_colors = {"V1": "#1b7837", "LM": "#762a83", "AL": "#e08214", "RL": "#2166ac"}
+if "neuron_counts" not in data:
+    print("Skipping neuron count plot — run step2 to generate nc data.")
+else:
+    nc = data["neuron_counts"]
+    area_colors = {"V1": "#1b7837", "LM": "#762a83", "AL": "#e08214", "RL": "#2166ac"}
 
-plt.figure(figsize=(8, 5))
+    plt.figure(figsize=(8, 5))
 
-for area in areas:
-    mean = data[f"nc_acc_mean_{area}"]
-    std  = data[f"nc_acc_std_{area}"]
-    plt.plot(nc, mean, marker="o", markersize=5, linewidth=2,
-             label=area, color=area_colors[area])
-    plt.fill_between(nc, mean - std, mean + std,
-                     color=area_colors[area], alpha=0.15)
+    for area in areas:
+        mean = data[f"nc_acc_mean_{area}"]
+        std  = data[f"nc_acc_lr_std_{area}"]
+        plt.plot(nc, mean, marker="o", markersize=5, linewidth=2,
+                 label=area, color=area_colors[area])
+        plt.fill_between(nc, mean - std, mean + std,
+                         color=area_colors[area], alpha=0.15)
 
-plt.axhline(chance, linestyle="--", color="black", label="Chance (1/3)")
-plt.xlabel("Number of neurons")
-plt.ylabel("Mean balanced accuracy (across time & seeds)")
-plt.title(f"Accuracy vs neuron count (LR)  [{W_LABEL}]")
-plt.legend()
-plt.tight_layout()
-savefig(f"q2_neuron_count_w{WINDOW}")
-plt.show()
+    plt.axhline(chance, linestyle="--", color="black", label="Chance (1/3)")
+    plt.xlabel("Number of neurons")
+    plt.ylabel("Mean balanced accuracy (across time & seeds)")
+    plt.title(f"Accuracy vs neuron count (LR)  [{W_LABEL}]")
+    plt.legend()
+    plt.tight_layout()
+    savefig(f"q2_neuron_count_w{WINDOW}")
