@@ -17,7 +17,7 @@ from sklearn.linear_model import LinearRegression
 # -------------------------
 # CONFIG
 # -------------------------
-CHOSEN_SESSION = sys.argv[1] if len(sys.argv) > 1 else "7_4"
+CHOSEN_SESSION = sys.argv[1] if len(sys.argv) > 1 else "5_6"
 
 DATA_PATH = Path("/Users/bea/microns_decoding/data/1621/raw/microns.h5")
 RESULTS_DIR = Path(__file__).parent / "results" / CHOSEN_SESSION

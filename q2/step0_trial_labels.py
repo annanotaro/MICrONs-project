@@ -10,7 +10,7 @@ from pathlib import Path
 if len(sys.argv) > 1:
     CHOSEN_SESSION = sys.argv[1]
 else:
-    CHOSEN_SESSION = os.environ.get("CHOSEN_SESSION", "7_4")
+    CHOSEN_SESSION = os.environ.get("CHOSEN_SESSION", "5_6")
 
 READER_PATH = "/Users/gaiagr/.cache/huggingface/hub/datasets--NeuroBLab--MICrONS/snapshots/79c7c55fec8484ebffd1cef67cfa433e63f32a03/reader.py"
 DATA_PATH = "/Users/gaiagr/.cache/huggingface/hub/datasets--NeuroBLab--MICrONS/snapshots/79c7c55fec8484ebffd1cef67cfa433e63f32a03/microns.h5"
