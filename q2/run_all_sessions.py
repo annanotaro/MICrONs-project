@@ -19,6 +19,12 @@ PYTHON = sys.executable
 
 import h5py
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from project_config import MICRONS_DATA_PATH
+
 # -------------------------
 # ARGS
 # -------------------------
@@ -33,7 +39,7 @@ args = parser.parse_args()
 # -------------------------
 # CONFIG
 # -------------------------
-DATA_PATH    = Path("/Users/bea/microns_decoding/data/1621/raw/microns.h5")
+DATA_PATH = Path(MICRONS_DATA_PATH)
 Q2_DIR       = Path(__file__).parent
 MIN_AL_NEURONS = 200
 

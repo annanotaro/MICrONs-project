@@ -1,8 +1,15 @@
 import sys
 import importlib.util
+from pathlib import Path
 
-reader_path = r"C:\Users\Anna Notaro\.cache\huggingface\hub\datasets--NeuroBLab--MICrONS\snapshots\62869ddcb42d06b4436383d2e56201429d919c34\reader.py"
-data_path = r"C:\data\microns\microns.h5"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from project_config import MICRONS_DATA_PATH, MICRONS_READER_PATH
+
+reader_path = MICRONS_READER_PATH
+data_path = MICRONS_DATA_PATH
 
 spec = importlib.util.spec_from_file_location("microns_reader", reader_path)
 reader_module = importlib.util.module_from_spec(spec)

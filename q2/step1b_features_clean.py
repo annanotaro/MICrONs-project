@@ -17,9 +17,16 @@ from sklearn.linear_model import LinearRegression
 # -------------------------
 # CONFIG
 # -------------------------
-CHOSEN_SESSION = sys.argv[1] if len(sys.argv) > 1 else "5_6"
+# Add project root to path for project_config
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-DATA_PATH = Path("/Users/bea/microns_decoding/data/1621/raw/microns.h5")
+from project_config import MICRONS_DATA_PATH
+
+CHOSEN_SESSION = sys.argv[1] if len(sys.argv) > 1 else "7_4"
+
+DATA_PATH = MICRONS_DATA_PATH
 RESULTS_DIR = Path(__file__).parent / "results" / CHOSEN_SESSION
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
