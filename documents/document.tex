@@ -34,13 +34,13 @@ We focused on three big questions:
 \section{Key Results and Headlines}
 
 \subsection{The Stability Paradox}
-The most surprising finding is that "noisy" or "unstable" brain activity actually carries \textit{more} information. When we looked at trials where the firing rate fluctuated more (high CV), the accuracy of our "guesses" jumped significantly (from 61\% to 73\% in some areas). This suggests the brain's "jitter" is actually a feature, not a bug.
+The most surprising finding is that "noisy" or "unstable" brain activity often carries \textit{more} information. When we looked at trials where the firing rate fluctuated more (high CV), the accuracy of our "guesses" improved, particularly in higher visual areas like \textbf{AL}. This suggests the brain's "jitter" isn't just noise—it's a feature that helps encode complex category signals.
 
 \subsection{Spotting the "Deepfakes"}
-The mouse brain is surprisingly good at telling real film apart from computer-generated movies. While it is easier to spot abstract patterns, brain areas like \textbf{RL} and \textbf{LM} are sensitive enough to detect the subtle artificial textures in rendered nature scenes.
+The mouse brain is surprisingly good at telling real film apart from computer-generated movies. While it is easier to spot abstract patterns, brain areas like \textbf{LM} and \textbf{V1} are exceptionally sensitive at detecting the subtle differences between filmed and rendered nature scenes, achieving nearly 80\% accuracy in source origin classification.
 
-\subsection{Area RL: The Category Specialist}
-While all visual areas could do the task, \textbf{Area RL} (Rostrolateral) emerged as the champion. It had the highest accuracy (91\% for natural vs. artificial) and showed the strongest boost in performance during "unstable" activity.
+\subsection{Area AL: The Category Champion}
+While all visual areas performed well, \textbf{Area AL} (Anterolateral) emerged as the champion for binary categorization in this session, reaching the highest peak accuracy in our time-resolved analysis. It also showed the strongest boost in performance during "unstable" activity, confirming its role as a sophisticated category processor.
 
 \section{Conclusion: A Robust and Dynamic System}
 By extending our Q2 logic to the full library of images, we discovered that the "Naturalness" signal is hard-wired and extremely robust. Even with just 25 neurons, the brain can accurately categorize a video. This signal isn't just a quick flash; it evolves over time, using highly dynamic and variable activity to distinguish the real world from the artificial.
@@ -50,28 +50,28 @@ By extending our Q2 logic to the full library of images, we discovered that the 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/q3_radar_summary_7_4.png}
-    \caption{Summary Radar Chart showing categorization performance across all brain areas.}
-    \textit{} This chart proves that category recognition isn't limited to one small spot; it's a system-wide "vibe" check. It also highlights Area RL as the most sophisticated processor, consistently beating out the others at identifying the video's source.
+    \includegraphics[width=0.7\textwidth]{images/q3_radar_summary_5_6.png}
+    \caption{Summary Radar Chart showing categorization performance across all brain areas (Session 5\_6).}
+    \textit{} This chart proves that category recognition isn't limited to one small spot; it's a system-wide "vibe" check. It also highlights Area AL as a top performer in this session, consistently identifying the video's source and category.
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/q3_stable_vs_unstable_7_4.png}
-    \caption{The Stability Paradox: "Unstable" trials (dashed) often carry more information than "Stable" trials (solid).}
-    \textit{} This is our most disruptive finding. It flips the standard assumption that "calm" brain activity is better. It suggests that the brain's "flicker" or variability is actually where the most complex information about categories is stored.
+    \includegraphics[width=0.7\textwidth]{images/q3_stable_vs_unstable_5_6.png}
+    \caption{The Stability Paradox: "Unstable" trials (dashed) often carry more information than "Stable" trials (solid), especially in Area AL.}
+    \textit{} This finding flips the standard assumption that "calm" brain activity is better. It suggests that the brain's "flicker" or variability is actually where the most complex information about categories is stored.
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/q3_confusion_3class_7_4.png}
+    \includegraphics[width=0.7\textwidth]{images/q3_confusion_3class_5_6.png}
     \caption{Confusion Matrices: Demonstrating the brain's ability to distinguish Filmed, Rendered, and Parametric sources.}
     \textit{} This result demonstrates the high resolution of the visual system. It proves the mouse brain doesn't just see "moving shapes"—it can actually tell the difference between the organic textures of a real forest and the mathematical precision of a computer-generated one.
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/q3_time_accuracy_binary_7_4.png}
+    \includegraphics[width=0.7\textwidth]{images/q3_time_accuracy_binary_5_6.png}
     \caption{Temporal Evolution: How the "Natural vs Artificial" guess evolves frame-by-frame.}
     \textit{} This allows us to see the "speed of thought." It reveals that the brain recognizes the "Natural" category almost immediately after the video starts, confirming that this is a fundamental, hard-wired part of the mouse's visual intelligence.
 \end{figure}

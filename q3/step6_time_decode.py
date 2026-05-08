@@ -14,6 +14,8 @@ Outputs:
   q3/results/<session>/csv/q3_stability_decoding_<session>.csv
 """
 
+import warnings
+
 import numpy as np
 import pandas as pd
 from scipy.stats import mannwhitneyu, spearmanr, wilcoxon
@@ -22,6 +24,8 @@ from sklearn.model_selection import GroupKFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import balanced_accuracy_score
+
+warnings.filterwarnings("ignore", message="y_pred contains classes not in y_true")
 
 from config import (
     AREAS,
