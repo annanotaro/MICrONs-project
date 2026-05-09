@@ -100,6 +100,8 @@ for i, sess in enumerate(sessions):
     ok = run("step1b_features_clean.py", sess)
     if not ok:
         print(f"  step1b failed for {sess}, skipping clean decode.")
+        elapsed = time.time() - sess_start
+        print(f"\n  Session {sess} done in {elapsed/60:.1f} min")
         continue
 
     # Step 2 clean: decode (clean) — LR + SVM
@@ -117,7 +119,7 @@ for i, sess in enumerate(sessions):
 if not args.skip_pool:
     print(f"\n{'='*65}")
     print("Pooling results across sessions...")
-    run("step4_pool_sessions.py", "--both")
+    run("step4_pool_sessions.py")
 
 total = time.time() - overall_start
 print(f"\n{'='*65}")

@@ -42,7 +42,8 @@ def collect(clean):
     sessions_found = []
 
     for sess_dir in session_dirs:
-        f = sess_dir / f"q2_decode_{suffix}_{sess_dir.name}.npz"
+        f = sess_dir / (f"q2_decode_clean_{sess_dir.name}.npz" if clean
+                       else f"q2_decode_{sess_dir.name}.npz")
         if not f.exists():
             continue
         d = np.load(f, allow_pickle=True)

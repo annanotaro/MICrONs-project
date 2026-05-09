@@ -1,5 +1,6 @@
 import os
 import sys
+import argparse
 import numpy as np
 from pathlib import Path
 
@@ -13,19 +14,26 @@ from sklearn.metrics import balanced_accuracy_score, confusion_matrix
 # -------------------------
 # CONFIG
 # -------------------------
-if len(sys.argv) > 1:
-    CHOSEN_SESSION = sys.argv[1]
-else:
-    CHOSEN_SESSION = os.environ.get("CHOSEN_SESSION", "5_6")
+parser = argparse.ArgumentParser()
+parser.add_argument("session", nargs="?", default=os.environ.get("CHOSEN_SESSION", "5_6"))
+parser.add_argument("window", nargs="?", type=int, default=1)
+parser.add_argument("--clean", action="store_true", help="Decode behaviorally-regressed features")
+args = parser.parse_args()
 
-W_ARG = int(sys.argv[2]) if len(sys.argv) > 2 else 1
+CHOSEN_SESSION = args.session
+W_ARG = args.window
+CLEAN = args.clean
 
 RESULTS_DIR = Path(__file__).parent / "results" / CHOSEN_SESSION
-FEATURES_PATH = RESULTS_DIR / f"q2_features_{CHOSEN_SESSION}.npz"
-if W_ARG == 1:
-    OUT_PATH = RESULTS_DIR / f"q2_decode_{CHOSEN_SESSION}.npz"
+
+if CLEAN:
+    FEATURES_PATH = RESULTS_DIR / f"q2_features_clean_{CHOSEN_SESSION}.npz"
+    OUT_PATH = RESULTS_DIR / (f"q2_decode_clean_{CHOSEN_SESSION}.npz" if W_ARG == 1
+                              else f"q2_decode_clean_w{W_ARG}_{CHOSEN_SESSION}.npz")
 else:
-    OUT_PATH = RESULTS_DIR / f"q2_decode_w{W_ARG}_{CHOSEN_SESSION}.npz"
+    FEATURES_PATH = RESULTS_DIR / f"q2_features_{CHOSEN_SESSION}.npz"
+    OUT_PATH = RESULTS_DIR / (f"q2_decode_{CHOSEN_SESSION}.npz" if W_ARG == 1
+                              else f"q2_decode_w{W_ARG}_{CHOSEN_SESSION}.npz")
 
 AREAS = ["V1", "LM", "AL", "RL"]
 N_SPLITS = 5
