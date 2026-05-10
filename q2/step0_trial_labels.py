@@ -3,16 +3,23 @@ import sys
 import h5py
 import pandas as pd
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import DATA_PATH
 
 # -------------------------
 # CONFIG
 # -------------------------
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from project_config import MICRONS_DATA_PATH, MICRONS_READER_PATH
+
 if len(sys.argv) > 1:
     CHOSEN_SESSION = sys.argv[1]
 else:
-    CHOSEN_SESSION = os.environ.get("CHOSEN_SESSION", "5_6")
+    CHOSEN_SESSION = os.environ.get("CHOSEN_SESSION", "7_4")
+
+READER_PATH = MICRONS_READER_PATH
+DATA_PATH = MICRONS_DATA_PATH
 
 RESULTS_DIR = Path(__file__).parent / "results" / CHOSEN_SESSION
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)

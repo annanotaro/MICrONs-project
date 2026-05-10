@@ -14,10 +14,16 @@ from pathlib import Path
 
 import h5py
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from project_config import MICRONS_DATA_PATH
+
 # ------------------------------------------------------------------
 # Config
 # ------------------------------------------------------------------
-DATA_PATH = r"C:\data\microns\microns.h5"
+DATA_PATH = MICRONS_DATA_PATH
 MIN_AL_NEURONS = 200   # skip sessions with too-small AL populations
 SKIP_SESSIONS = {"7_4"}  # sessions to always exclude from auto-discovery
 

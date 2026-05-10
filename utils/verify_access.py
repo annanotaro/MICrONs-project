@@ -1,12 +1,19 @@
 import sys
 import importlib.util
 import traceback
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from project_config import MICRONS_DATA_PATH, MICRONS_READER_PATH
 
 # ---------------------------------------------------------------
 # Paths — adjust if yours differ
 # ---------------------------------------------------------------
-READER_PATH = r"C:\Users\Anna Notaro\.cache\huggingface\hub\datasets--NeuroBLab--MICrONS\snapshots\62869ddcb42d06b4436383d2e56201429d919c34\reader.py"
-DATA_PATH = r"C:\data\microns\microns.h5"
+READER_PATH = MICRONS_READER_PATH
+DATA_PATH = MICRONS_DATA_PATH
 
 # ---------------------------------------------------------------
 # 1. Load the reader module

@@ -3,16 +3,16 @@ import importlib.util
 import h5py
 import pandas as pd
 from collections import Counter
+from pathlib import Path
 
-import os
-READER_PATH = os.environ.get(
-    "MICRONS_READER_PATH",
-    r"C:\Users\Anna Notaro\.cache\huggingface\hub\datasets--NeuroBLab--MICrONS\snapshots\62869ddcb42d06b4436383d2e56201429d919c34\reader.py"
-)
-DATA_PATH = os.environ.get(
-    "MICRONS_DATA_PATH",
-    r"C:\data\microns\microns.h5"
-)
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from project_config import MICRONS_DATA_PATH, MICRONS_READER_PATH
+
+READER_PATH = MICRONS_READER_PATH
+DATA_PATH = MICRONS_DATA_PATH
 
 spec = importlib.util.spec_from_file_location("microns_reader", READER_PATH)
 reader_module = importlib.util.module_from_spec(spec)

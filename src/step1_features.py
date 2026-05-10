@@ -3,21 +3,17 @@ import importlib.util
 import h5py
 import numpy as np
 import pandas as pd
-from pathlib import Path
 import os
-
-
-READER_PATH = os.environ.get(
-    "MICRONS_READER_PATH",
-    r"C:\Users\Anna Notaro\.cache\huggingface\hub\datasets--NeuroBLab--MICrONS\snapshots\62869ddcb42d06b4436383d2e56201429d919c34\reader.py"
-)
-DATA_PATH = os.environ.get(
-    "MICRONS_DATA_PATH",
-    r"C:\data\microns\microns.h5"
-)
-
-import sys
 from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from project_config import MICRONS_DATA_PATH, MICRONS_READER_PATH
+
+READER_PATH = MICRONS_READER_PATH
+DATA_PATH = MICRONS_DATA_PATH
 
 if len(sys.argv) > 1:
     CHOSEN_SESSION = sys.argv[1]
@@ -48,7 +44,7 @@ MicronsReader = reader_module.MicronsReader
 # Load trial labels from Step 0
 # ---------------------------------------------------------------
 trials_df = pd.read_csv(RESULTS_DIR / f"trials_{CHOSEN_SESSION}.csv")
-print(f"Loaded {len(trials_df)} trials from {RESULTS_DIR / f"trials_{CHOSEN_SESSION}.csv"}")
+print(f"Loaded {len(trials_df)} trials from {RESULTS_DIR / f'trials_{CHOSEN_SESSION}.csv'}")
 print(trials_df["label"].value_counts().to_string())
 print()
 

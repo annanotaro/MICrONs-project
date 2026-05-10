@@ -9,5 +9,15 @@ features_*.npz
 Thumbs.db
 
 # ignore data
-q2/results/
-*.npz
+
+.env
+
+CLAUDE.md.venv
+__pycache__
+*.pyo
+*.egg-info
+dist/
+build/
+.ipynb_checkpoints
+*.log
+CLAUDE.md

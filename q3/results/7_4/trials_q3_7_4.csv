@@ -1,0 +1,465 @@
+trial_idx,hash,type,short_name,movie_name,label,is_natural,origin,naturalness_group
+0,J4PH3ez0PBmcINVwekyF,Clip,sports1m,2011 KIA X-GAME Aggressive Inline VERT Final,Sports1M,True,filmed,human_filmed
+1,n2kq4Nv6UNm4wJbdtuHM,Clip,sports1m,2010 WORLDS Justin Ruiz (USA) dec Richard Karelson (EST) 96 kg GR,Sports1M,True,filmed,human_filmed
+2,iYxs1vPwdSenUzRva/I3,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+3,N1Sn679rCW0XsG5S7c/C,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+4,jlM0Ornu8Dw2nAXCwego,Clip,Rendered,mountainlake_047-1-0-70-0_54.89.40.102,Rendered,True,rendered,cg_natural
+5,iXM+aZY10zP+t3wPmZOW,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+6,MaN8zZQItdhsFNBq5/yl,Clip,Rendered,run213-darkTemple-1-0,Rendered,True,rendered,cg_natural
+7,18PTv0aCUhaUeL2r9kDd,Clip,sports1m,2012 July 10 Midweek MTB Corner Canyon XC Mountain Bike Race (Stabilized),Sports1M,True,filmed,human_filmed
+8,cK20wOm48y1gpxBcZuzN,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+9,s8DvZS/fghphUcTsLOzM,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+10,8IyLxfa6UikBgn/lOdpD,Clip,sports1m,2012 January 28 Frozen Hog Snow Mountain Bike Race,Sports1M,True,filmed,human_filmed
+11,AXD+rrWG8VbV+xLvzwfb,Clip,sports1m,2012 May 28 ICUP 7th Annual Stan Crane Memorial XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+12,tRgm529SPpQspr220FRm,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+13,IM+4otcj9xG0TMVozt83,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+14,sg7sThmmNsQIXxQkh8b5,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+15,+4gByvU9LfvSD0JHP6Ae,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+16,Ojz9m3WEOVsdqsRb80wc,Clip,sports1m,2012 August 14 Midweek MTB Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+17,SidmZbSU27eY9JI02CNs,Clip,Rendered,swamp_054-1-11-70-0_54.162.127.170,Rendered,True,rendered,cg_natural
+18,SM8AsJdh8ngk+hFny/y+,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+19,HOyjywQ3pn6yuOCnlHki,Clip,sports1m,2011 July 23 ICUP Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+20,3Vml6UFDcV72MKmDQK24,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+21,+PekFmYeH3lwKrbv92bM,Clip,Rendered,swamp_030-1-11-70-0_54.196.24.32,Rendered,True,rendered,cg_natural
+22,HM+OgD8yKfeMGSL/gz0Q,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+23,PMoSd6ymRqEhlAhsPEUo,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+24,Xr89YxGG5sxFyt0Ssbr1,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+25,yguuTn1vtCLFWYadxfdr,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+26,e0S1tFVljQgdoZwgpNnE,Clip,sports1m,2011 July 6 Weekly Race Series Sundance XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+27,5YhYeJVNWpWZMChA0ko0,Clip,Rendered,subway_104-1-3-70-0_52.205.253.179,Rendered,True,rendered,cg_natural
+28,CSb5Zyz831LCPHkW48xc,Clip,Rendered,mountainlake_034-1-0-70-0_54.196.24.32,Rendered,True,rendered,cg_natural
+29,+QhdQfKUIWxgOOXu4HPH,Clip,Rendered,kowloon_131-1-8-70-0_54.205.66.32,Rendered,True,rendered,cg_natural
+30,Uap2FxF/6+B/K9JacleI,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+31,4ttvgtUeWoKPA7rJqbfj,Clip,Rendered,lowpolyjungle_099-1-9-70-0_34.203.243.27,Rendered,True,rendered,cg_natural
+32,GjCMo2GkJp6y5vricadg,Clip,Rendered,americandiner_005-1-5-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+33,7UETOWO5Z8aWuHDBJ2GG,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+34,Oup5uAZxF2G7zEJkT+ui,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+35,5zQTb77qI+ig8rigx1XU,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+36,ecUQJtcERZJGdqza1k7h,Clip,sports1m,2009 Krugers Cross Singlespeed Cyclocross Race - Helmet Cam,Sports1M,True,filmed,human_filmed
+37,KXdTNAGMo1gCWz2Ge8zr,Clip,Rendered,run82-ancientTomb-1-0,Rendered,True,rendered,cg_natural
+38,k8bXXp4KSKuuBOkrbEtg,Clip,Cinematic,Koyaanisqatsi: Life Out of Balance (1982),Cinematic,True,filmed,human_filmed
+39,3Tdbgbbjs2IgLUW7+6Qy,Clip,Cinematic,Koyaanisqatsi: Life Out of Balance (1982),Cinematic,True,filmed,human_filmed
+40,Yo1qmPMOdvfQcB4QtD+m,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+41,0yGI0KY8zHLoMeETpkNY,Clip,Rendered,run49-templeInterior-1-0,Rendered,True,rendered,cg_natural
+42,IVAq2WrNLQ3S20jKdUWm,Clip,sports1m,180 to snapped shadow torid v2 cranks,Sports1M,True,filmed,human_filmed
+43,fetzi4LZqgN3R+ppTVMd,Clip,Rendered,mountainlake_117-1-0-70-0_54.159.174.165,Rendered,True,rendered,cg_natural
+44,aVi6HP+Mx0PmirJtpYEi,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+45,ZJvulWBItHtLlDVkIntm,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+46,U6NqQRL+v/N/9xnLSH2y,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+47,L1QltnXeJf57fZSqA8hm,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+48,zgKEWUYFtW2FVcCS3ZIq,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+49,r9EOsoKWy7rnSW9PqnNR,Clip,Rendered,ancienttomb_080-1-4-70-0_54.89.40.102,Rendered,True,rendered,cg_natural
+50,jS6RhMqamXL0bnlWqHy9,Clip,sports1m,2012 January 28 Frozen Hog Snow Mountain Bike Race,Sports1M,True,filmed,human_filmed
+51,gM+l2ggjq0FU8hRq2pK9,Clip,Rendered,mountainlake_066-1-0-70-0_54.205.66.32,Rendered,True,rendered,cg_natural
+52,CQ9hf9o6XPLaC55cFN/Z,Clip,Rendered,kowloon_022-1-8-70-0_54.175.147.171,Rendered,True,rendered,cg_natural
+53,dLft8QjKVOhPvYj+M3wI,Clip,sports1m,2011 July 20 Weekly Race Series Sundance XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+54,op6QRPVlhC/W2/gVmtyM,Clip,Rendered,americandiner_066-1-5-70-0_107.23.36.15,Rendered,True,rendered,cg_natural
+55,tRWud8TeP5WjHxngR30N,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+56,7V+S/GOJTG+aDjBoiROQ,Clip,sports1m,2009FIS WORLD CHAMPIONSHIP DUALMOGULS FINALIST LUN Part4,Sports1M,True,filmed,human_filmed
+57,112vAaTi3svEIBDBr8hC,Clip,Rendered,medievalsewer_007-1-6-70-0_52.207.221.173,Rendered,True,rendered,cg_natural
+58,oSd2ouhlSeXrMHi/045D,Clip,Rendered,mountainlake_018-1-0-70-0_52.87.152.28,Rendered,True,rendered,cg_natural
+59,n2by1eYAR6XMxozIfieW,Clip,Rendered,ancienttomb_048-1-4-70-0_52.205.253.179,Rendered,True,rendered,cg_natural
+60,YWGU9pCJb1jD1EEZ20tf,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+61,FQR1XltfRJLPikdVpYNn,Clip,Rendered,mountainlake_008-1-0-70-0_54.205.66.32,Rendered,True,rendered,cg_natural
+62,O/TPbFEXzCLov05/KwS+,Clip,sports1m,2011 June 15 Weekly Race Series Soldier Hollow XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+63,GLb98O6GN6r7256/fA8Y,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+64,SuNRz+E/BsGGxVlNWLt9,Clip,Rendered,shintoday_036-1-12-70-0_184.73.123.94,Rendered,True,rendered,cg_natural
+65,mbeT2YEuzrol94GMBsSP,Clip,Rendered,lowpolyjungle_113-1-9-70-0_54.159.174.165,Rendered,True,rendered,cg_natural
+66,RL8zpBtdUqrcItpujIVj,Clip,Cinematic,Powaqqatsi: Life in Transformation (1988),Cinematic,True,filmed,human_filmed
+67,L313XjQzD6eqzIitZmbl,Clip,Rendered,subway_129-1-3-70-0_54.159.174.165,Rendered,True,rendered,cg_natural
+68,G8GCQlSYxw5oG/LVKDs2,Clip,Rendered,americandiner_099-1-5-70-0_184.73.123.94,Rendered,True,rendered,cg_natural
+69,YxZMp94AewnnwYmjI/0v,Clip,Cinematic,Koyaanisqatsi: Life Out of Balance (1982),Cinematic,True,filmed,human_filmed
+70,wE8wskQ2OpXgYdnpm+o0,Clip,sports1m,13 Rottenmanner Tauern-Adventure-Race,Sports1M,True,filmed,human_filmed
+71,Hx7nWm9l4FGDuTlUO/17,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+72,GjCMo2GkJp6y5vricadg,Clip,Rendered,americandiner_005-1-5-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+73,7UETOWO5Z8aWuHDBJ2GG,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+74,Oup5uAZxF2G7zEJkT+ui,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+75,5zQTb77qI+ig8rigx1XU,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+76,ecUQJtcERZJGdqza1k7h,Clip,sports1m,2009 Krugers Cross Singlespeed Cyclocross Race - Helmet Cam,Sports1M,True,filmed,human_filmed
+77,KXdTNAGMo1gCWz2Ge8zr,Clip,Rendered,run82-ancientTomb-1-0,Rendered,True,rendered,cg_natural
+78,4tIOoaR5VNXdEFB3JLsd,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+79,wrhbg7/9C5fsnGqt95w/,Clip,sports1m,2012 UNIV WORLDS Erickson (USA) dec Allikma (EST) 120 kg Greco repechage,Sports1M,True,filmed,human_filmed
+80,gnKtNfR9QYEW0PRkfRU4,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+81,LfckM0X1gCCgUlsmXIea,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+82,Ta17hPcaONVDy5sPjE9z,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+83,mpoHL5UE5tDtz7b51b3H,Clip,Rendered,americandiner_042-1-5-70-0_54.173.97.201,Rendered,True,rendered,cg_natural
+84,APccFaui8xmgaLPZxjAA,Clip,sports1m,2011 June 25 USCS Round Valley XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+85,hclIiiBW4rID0gjoYwbv,Clip,sports1m,14 ª volta ciclistica internacional do grande A B C D 2011 elite,Sports1M,True,filmed,human_filmed
+86,ZW5GVcDmKHQQrQdljO9u,Clip,sports1m,1984 Winter Olympics - Mens Luge 2nd Run - Part 1,Sports1M,True,filmed,human_filmed
+87,YWz8BdF7JHpb7SyGU3LO,Clip,Rendered,run125-lowPolyJungle-1-0,Rendered,True,rendered,cg_natural
+88,otpDc+UZTnv0+G/1LL/A,Clip,Rendered,lowpolyjungle_129-1-9-70-0_52.87.152.28,Rendered,True,rendered,cg_natural
+89,4ZE6JPeH4hCIesp0aRIB,Clip,Rendered,kowloon_110-1-8-70-0_54.209.141.225,Rendered,True,rendered,cg_natural
+90,JOYs8Wny1GJlw6AxCVo5,Clip,Rendered,lowpolyjungle_015-1-9-70-0_54.175.147.171,Rendered,True,rendered,cg_natural
+91,mG4xsIyTTnaRWKW82yeD,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+92,hnYVTt6SOC5gw43jdDOb,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+93,HvUTYlGssHeK5Ub4iNLY,Clip,Rendered,mountainlake_075-1-0-70-0_52.205.253.179,Rendered,True,rendered,cg_natural
+94,pBsrFShgY2qLi+7xYSGi,Clip,sports1m,1984 Winter Olympics - Mens Luge 1st run - Part 1,Sports1M,True,filmed,human_filmed
+95,IPvYT7eXLYJ557HrVPnG,Clip,sports1m,1 of 7 - 2010 ICup Utah Open State Championship XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+96,KjDfO15MEsKyQ1ecL7gs,Clip,Rendered,run257-mountainLake-1-0,Rendered,True,rendered,cg_natural
+97,W72D46ICk0GV1uh0E98o,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+98,rKhBb2Q+dILxw3t33TsJ,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+99,YfqXNa8nksH/H4Q7tw5G,Clip,Rendered,lowpolyjungle_118-1-9-70-0_54.83.154.242,Rendered,True,rendered,cg_natural
+100,OFk94miLCLRW7fhR6BQE,Clip,Rendered,swamp_075-1-11-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+101,VIxFQLvrzWwvLKX9CM5N,Clip,sports1m,1995 bmx vert bs contest  mat hoffman bike park okc,Sports1M,True,filmed,human_filmed
+102,ubOIjeUGbsNAJqMPIDqU,Clip,Rendered,mountainlake_066-1-0-70-0_54.205.66.32,Rendered,True,rendered,cg_natural
+103,ihsP/Q14/eSpxdQLR3F4,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+104,ClffawlgRfZbgKwX6zRB,Clip,Rendered,ancienttomb_100-1-4-70-0_54.209.141.225,Rendered,True,rendered,cg_natural
+105,aedxogPGpb5IiLcjLo8c,Clip,sports1m,2012 January 28 Frozen Hog Snow Mountain Bike Race,Sports1M,True,filmed,human_filmed
+106,3wXTReOQa7mnr6Oz8aUf,Clip,sports1m,2012 May 28 ICUP 7th Annual Stan Crane Memorial XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+107,0eP/PPhAGmbJ2peZOa/E,Clip,Rendered,ancienttomb_105-1-4-70-0_54.89.40.102,Rendered,True,rendered,cg_natural
+108,c6il6/HFHBatfpiQJdgg,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+109,99IJStq/7uCOm6ZQvZXf,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+110,K7ghyTmBpatAUFHymTb8,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+111,Dp7wDh2IrVZLCLrpGLuv,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+112,L7qi/53UTFA7uPvBMEnh,Clip,sports1m,2010 Olympic Trials - Aerials,Sports1M,True,filmed,human_filmed
+113,Q1EUpq1bX71j54HHx87/,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+114,Xv+ucC73NschlKtOZ6Sk,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+115,lpHaCMiAtOXlYiOhur0/,Clip,Cinematic,Koyaanisqatsi: Life Out of Balance (1982),Cinematic,True,filmed,human_filmed
+116,sxRabS1Ax/XPBqdWL7OT,Clip,Rendered,swamp_113-1-11-70-0_34.239.124.192,Rendered,True,rendered,cg_natural
+117,t8zv/lGq/5sBiJkseguw,Clip,sports1m,2009 Bend USA Cycling Cyclo-Cross Nationals - Elite Men race,Sports1M,True,filmed,human_filmed
+118,GjCMo2GkJp6y5vricadg,Clip,Rendered,americandiner_005-1-5-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+119,7UETOWO5Z8aWuHDBJ2GG,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+120,Oup5uAZxF2G7zEJkT+ui,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+121,5zQTb77qI+ig8rigx1XU,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+122,ecUQJtcERZJGdqza1k7h,Clip,sports1m,2009 Krugers Cross Singlespeed Cyclocross Race - Helmet Cam,Sports1M,True,filmed,human_filmed
+123,KXdTNAGMo1gCWz2Ge8zr,Clip,Rendered,run82-ancientTomb-1-0,Rendered,True,rendered,cg_natural
+124,LiWmwZ237ZWW3eK3UWGa,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+125,AZvr1UF39ygFqNxKr/8K,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+126,clN4ica4q7huSnWVFTFi,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+127,WD0uyxvusJmVxfeKu9mZ,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+128,GcFHh34+4ZS4mC19J6Mu,Clip,sports1m,2012 August 14 Midweek MTB Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+129,ml/LJkIztc94NrBIhRQ7,Clip,sports1m,1 of 5 - 2011 True Grit Epic Endurance Mountain Bike Race,Sports1M,True,filmed,human_filmed
+130,e/wb4pBnVpaEcLnlPusa,Clip,sports1m,2011 July 23 ICUP Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+131,n6p8dl6WmY/v8aFpVRDA,Clip,sports1m,2011 June 28 Midweek MTB Round Valley XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+132,0WhSPtHiiYMevcEnU16o,Clip,sports1m,2011 August 10 Weekly Race Series Soldier Hollow XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+133,XGJ2vXXcu3g3dylq0L9y,Clip,sports1m,2011 June 28 Midweek MTB Round Valley XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+134,S03m8gu1V8DJVx8Zy4v6,Clip,sports1m,2011 July 23 ICUP Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+135,zP2rl6ONCiLo0KPXhe09,Clip,Rendered,medievalsewer_046-1-6-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+136,7hdjI7XKyq1HSk9VJF8Z,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+137,MpNMKTkD/b50TMEs5iUL,Clip,sports1m,2012 UCI Road World Cycling Championships - Mens road race (final km) HD,Sports1M,True,filmed,human_filmed
+138,+58o3lq61cXuA5ByO/+c,Clip,sports1m,2012 HAFJELL NORWAY DOWNHILL MTB WORLD CUP RECAP   YouTube,Sports1M,True,filmed,human_filmed
+139,u9IdkcG/ki3lCeEPQuep,Clip,sports1m,2011 July 6 Weekly Race Series Sundance XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+140,Vdi70xOyBQEeDGhPVulx,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+141,FwG4V5nAZdXPlcAEu/X9,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+142,kkGYIdGYxoLQv3Sbu77y,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+143,DXaO78h5gLfPRgbxiutg,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+144,QRW73LwKdeuJBKdv9Xyk,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+145,zcz9H/fzww6BdAJTTzoe,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+146,EhwIk1vM51LHZPE6xFZX,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+147,hhWRsNy4ljt4M1PtvZ3u,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+148,UIRT1CCHgVDfheNGYQd6,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+149,Qtx9ZilPEN9mdem3G1lL,Clip,sports1m,2012 July 17 Midweek MTB Deer Valley Silver Lake Lodge XC Race (Stabilized),Sports1M,True,filmed,human_filmed
+150,8PA1UPAZQPiLL4qyfbe0,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+151,yCXacouyIMBJMNQBQeSe,Clip,sports1m,2009 Univest Grand Prix Road Race PA,Sports1M,True,filmed,human_filmed
+152,cX1uqe3yuBtkCRNeZPSD,Clip,Rendered,lowpolyjungle_125-1-9-70-0_54.175.147.171,Rendered,True,rendered,cg_natural
+153,0JcYLY6eaQxNgD0AqyHf,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+154,GjCMo2GkJp6y5vricadg,Clip,Rendered,americandiner_005-1-5-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+155,7UETOWO5Z8aWuHDBJ2GG,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+156,Oup5uAZxF2G7zEJkT+ui,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+157,5zQTb77qI+ig8rigx1XU,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+158,ecUQJtcERZJGdqza1k7h,Clip,sports1m,2009 Krugers Cross Singlespeed Cyclocross Race - Helmet Cam,Sports1M,True,filmed,human_filmed
+159,KXdTNAGMo1gCWz2Ge8zr,Clip,Rendered,run82-ancientTomb-1-0,Rendered,True,rendered,cg_natural
+160,okYfMyn8qc2ClgvpS7WG,Clip,sports1m,2009 Skijoring Event in Whitefish Montana (part 1),Sports1M,True,filmed,human_filmed
+161,NHlF8hOkZ6psFRIVhB6N,Clip,Rendered,ancienttomb_107-1-4-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+162,AxNNo310kAl9uUSr+hXS,Clip,Rendered,medievalsewer_009-1-6-70-0_107.23.36.15,Rendered,True,rendered,cg_natural
+163,mjtZRmGqaXCHGB59txoI,Clip,Cinematic,Powaqqatsi: Life in Transformation (1988),Cinematic,True,filmed,human_filmed
+164,W50xYLSTlUixv1tOfuSJ,Clip,sports1m,2011 Boulder Cup Cyclocross Elite Women,Sports1M,True,filmed,human_filmed
+165,WpAnXD10RC/bdk0t5JIH,Clip,sports1m,1 of 5 - 2010 ICup 2nd Annual Rock The Canyons XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+166,YFxX7HvGlO8C1ykobO23,Clip,Rendered,medievalsewer_038-1-6-70-0_54.89.40.102,Rendered,True,rendered,cg_natural
+167,3pQLwVTyZ+4SIHuCaf2T,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+168,FVvjS4ohOthRyCXyVGN8,Clip,sports1m,2011 July 23 ICUP Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+169,wuoiZ4Jy4Ga1daTWZUNz,Clip,Rendered,run106-medievalSewer-1-0,Rendered,True,rendered,cg_natural
+170,y3xzqe5eCkutBL+vz8Bg,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+171,FReP3FYJBEZwexB+R1Xz,Clip,Rendered,run196-medievalSewer-1-0,Rendered,True,rendered,cg_natural
+172,h8yYhmXV5vyXqPxkXt5a,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+173,SzeVJsDzE+Ceeb3XK4TT,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+174,GHn0W57E+2PS+Qr5yD2r,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+175,Sqv4lziRTQgtkUPYRRiM,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+176,EKmE214XwtXZC02W+5cU,Clip,Rendered,medievalsewer_052-1-6-70-0_54.210.37.143,Rendered,True,rendered,cg_natural
+177,nYIG0cJ/KSKSHorB0ieN,Clip,sports1m,2008 Lievin Cyclocross World Cup Mens Race (Part 1),Sports1M,True,filmed,human_filmed
+178,h6xQGEIU4lcujP/xsf3N,Clip,Cinematic,Powaqqatsi: Life in Transformation (1988),Cinematic,True,filmed,human_filmed
+179,9jWJ1XPlky26vuNvP6rU,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+180,7+dfd12EAu08zPDpxOFS,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+181,MPMFuHR/d7LaUaksGLga,Clip,Rendered,templeinterior_012-1-2-70-0_184.73.123.94,Rendered,True,rendered,cg_natural
+182,JNYUnhFvI0mZbwN58E20,Clip,Rendered,swamp_124-1-11-70-0_34.239.124.192,Rendered,True,rendered,cg_natural
+183,7keiPs7vk9CHNrtDuOxL,Clip,sports1m,2012 July 17 Midweek MTB Deer Valley Silver Lake Lodge XC Race (Stabilized),Sports1M,True,filmed,human_filmed
+184,t24nBc6mpih4DR5C/qVP,Clip,Rendered,subway_016-1-3-70-0_52.205.253.179,Rendered,True,rendered,cg_natural
+185,JzIVwvytTHCEhcYc0EkS,Clip,sports1m,2012 UNIV WORLDS Stenberg (USA) dec Sasunouski (BLR) 84 kg Greco bout,Sports1M,True,filmed,human_filmed
+186,shDuGRZylVmZLCBFIVeP,Clip,sports1m,2011 July 23 ICUP Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+187,ysjy6YgGXX5+mcx52KSM,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+188,QmynNYnz4Q0hMBpTZ/xv,Clip,Cinematic,Koyaanisqatsi: Life Out of Balance (1982),Cinematic,True,filmed,human_filmed
+189,gpu0WyfdPMgXV/xhy6ZP,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+190,0ir9/br3yxbe2BBf65zF,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+191,NM2SnnQwIoj8iKOMP6xA,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+192,F5KOXJGuqZljKK9USGu/,Clip,sports1m,2010 WORLDS Jake Clark (USA) dec T Tounousidis (GRE) 84 kg GR,Sports1M,True,filmed,human_filmed
+193,uWDM4AAJ+PIdXzpPxOha,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+194,GjCMo2GkJp6y5vricadg,Clip,Rendered,americandiner_005-1-5-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+195,7UETOWO5Z8aWuHDBJ2GG,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+196,Oup5uAZxF2G7zEJkT+ui,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+197,5zQTb77qI+ig8rigx1XU,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+198,ecUQJtcERZJGdqza1k7h,Clip,sports1m,2009 Krugers Cross Singlespeed Cyclocross Race - Helmet Cam,Sports1M,True,filmed,human_filmed
+199,KXdTNAGMo1gCWz2Ge8zr,Clip,Rendered,run82-ancientTomb-1-0,Rendered,True,rendered,cg_natural
+200,R2YTk1TGlZui9PbML2e7,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+201,YLuStB2eXkgOS+Cescsy,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+202,+rgSVBVRE8Ij1WNhq8ZW,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+203,avHG2QBqnb9F/xY78GmI,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+204,Mg5bLgoNvze3EPLB9rbZ,Clip,sports1m,2011 KIA X-GAME Aggressive Inline VERT Final,Sports1M,True,filmed,human_filmed
+205,yfFAPn1QpVQmEC2iXg07,Clip,Rendered,swamp_103-1-11-70-0_54.162.127.170,Rendered,True,rendered,cg_natural
+206,fSfoxctVyPEoVzFOpsAw,Clip,Rendered,ancienttomb_068-1-4-70-0_34.239.124.192,Rendered,True,rendered,cg_natural
+207,5Q4+LRPdnmpiazfLNOdJ,Clip,Rendered,mountainlake_006-1-0-70-0_184.73.123.94,Rendered,True,rendered,cg_natural
+208,EyGfkWSsxEsE8f3GX5Ox,Clip,Rendered,lowpolyjungle_079-1-9-70-0_52.87.152.28,Rendered,True,rendered,cg_natural
+209,Lp/pttdcIH1AZsCOGZuG,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+210,F5PByWIj+t01yrrPQATY,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+211,PyCnH+ttd6IpZrYVJdJg,Clip,Rendered,swamp_015-1-11-70-0_54.83.154.242,Rendered,True,rendered,cg_natural
+212,GJTC7BYupdqoTyvMByUD,Clip,Rendered,run15-lowPolyJungle-1-0,Rendered,True,rendered,cg_natural
+213,DMYbouFXgAC2JtqeKVM2,Clip,Rendered,subway_048-1-3-70-0_54.89.40.102,Rendered,True,rendered,cg_natural
+214,EnPvG3XxtcBv11Kc11JF,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+215,MlfhtW2Pt38RCD73EuEV,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+216,AqhLAv/anAeKHQ0JDflm,Clip,Rendered,run171-AmericanDiner-1-0,Rendered,True,rendered,cg_natural
+217,Y3HzzeF0z2tZr1MPfqzX,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+218,OVFhZ1njRRW3j4jq+aOG,Clip,sports1m,2011 July 23 ICUP Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+219,cjek2M6D7XehUAetQyJL,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+220,isOeuCaTCWnyCI1VClNF,Clip,Rendered,kowloon_052-1-8-70-0_54.175.147.171,Rendered,True,rendered,cg_natural
+221,YZF9TpgjYUrQNdYeUNao,Clip,sports1m,15-Year Old Travis Pastrana Freestyle Moto X Gold with Score of 99 - X Games Five,Sports1M,True,filmed,human_filmed
+222,NWqTwzuwGakTM37kHKK4,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+223,ik5DKO+EInbAGwcH0BfB,Clip,sports1m,2011 June 14 Midweek MTB Corner Canyon XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+224,dHvGJAD7cN8KboJxFF4/,Clip,sports1m,2011 June 14 Midweek MTB Corner Canyon XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+225,zlQ935qW1A8YOiseS7gY,Clip,Rendered,medievalsewer_132-1-6-70-0_54.210.37.143,Rendered,True,rendered,cg_natural
+226,XoerXglPXrngFUI5uTG6,Clip,sports1m,1 of 5 - 2010 ICup 2nd Annual Rock The Canyons XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+227,EKhyHmLj04EcBoR25T/e,Clip,Rendered,americandiner_079-1-5-70-0_184.73.123.94,Rendered,True,rendered,cg_natural
+228,kEq0YeYOSSBtM1ZkWA1a,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+229,yv/S61fYnDSQcA9J6Nk8,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+230,VmwBOJU19AKcQHc6+W1X,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+231,YXM9r9BfOrHfH1PRx4gt,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+232,QRW73LwKdeuJBKdv9Xyk,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+233,zcz9H/fzww6BdAJTTzoe,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+234,EhwIk1vM51LHZPE6xFZX,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+235,hhWRsNy4ljt4M1PtvZ3u,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+236,EtlQ5HC7umNHyscbnE2P,Clip,Cinematic,Powaqqatsi: Life in Transformation (1988),Cinematic,True,filmed,human_filmed
+237,pZnG/mk9gKAeDH3gwe7t,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+238,suOAwm86py3JkdSin6tC,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+239,aZV+Tl0P3ExnTyU5flJO,Clip,Rendered,subway_016-1-3-70-0_34.203.243.27,Rendered,True,rendered,cg_natural
+240,JdsWVKvExcyDD6vTwZU1,Clip,Rendered,swamp_009-1-11-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+241,6NmDNSF9Rpdh42cAISmL,Clip,Rendered,swamp_104-1-11-70-0_54.196.24.32,Rendered,True,rendered,cg_natural
+242,J4PH3ez0PBmcINVwekyF,Clip,sports1m,2011 KIA X-GAME Aggressive Inline VERT Final,Sports1M,True,filmed,human_filmed
+243,n2kq4Nv6UNm4wJbdtuHM,Clip,sports1m,2010 WORLDS Justin Ruiz (USA) dec Richard Karelson (EST) 96 kg GR,Sports1M,True,filmed,human_filmed
+244,iYxs1vPwdSenUzRva/I3,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+245,N1Sn679rCW0XsG5S7c/C,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+246,jlM0Ornu8Dw2nAXCwego,Clip,Rendered,mountainlake_047-1-0-70-0_54.89.40.102,Rendered,True,rendered,cg_natural
+247,iXM+aZY10zP+t3wPmZOW,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+248,YWGU9pCJb1jD1EEZ20tf,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+249,FQR1XltfRJLPikdVpYNn,Clip,Rendered,mountainlake_008-1-0-70-0_54.205.66.32,Rendered,True,rendered,cg_natural
+250,O/TPbFEXzCLov05/KwS+,Clip,sports1m,2011 June 15 Weekly Race Series Soldier Hollow XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+251,GLb98O6GN6r7256/fA8Y,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+252,SuNRz+E/BsGGxVlNWLt9,Clip,Rendered,shintoday_036-1-12-70-0_184.73.123.94,Rendered,True,rendered,cg_natural
+253,mbeT2YEuzrol94GMBsSP,Clip,Rendered,lowpolyjungle_113-1-9-70-0_54.159.174.165,Rendered,True,rendered,cg_natural
+254,RL8zpBtdUqrcItpujIVj,Clip,Cinematic,Powaqqatsi: Life in Transformation (1988),Cinematic,True,filmed,human_filmed
+255,L313XjQzD6eqzIitZmbl,Clip,Rendered,subway_129-1-3-70-0_54.159.174.165,Rendered,True,rendered,cg_natural
+256,G8GCQlSYxw5oG/LVKDs2,Clip,Rendered,americandiner_099-1-5-70-0_184.73.123.94,Rendered,True,rendered,cg_natural
+257,YxZMp94AewnnwYmjI/0v,Clip,Cinematic,Koyaanisqatsi: Life Out of Balance (1982),Cinematic,True,filmed,human_filmed
+258,wE8wskQ2OpXgYdnpm+o0,Clip,sports1m,13 Rottenmanner Tauern-Adventure-Race,Sports1M,True,filmed,human_filmed
+259,Hx7nWm9l4FGDuTlUO/17,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+260,oWRi0PRdGG4GvoOoDiRz,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+261,+ODjhqVQD4/Bf0ioMzLv,Clip,Rendered,kowloon_104-1-8-70-0_54.209.141.225,Rendered,True,rendered,cg_natural
+262,3X/aqQYV0Y+4lkyz7jBX,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+263,VaJ2gRLWxU8ZZdZaeye+,Clip,sports1m,2 bicicletas eléctricas mountain bike electrica y bicicleta electrica plegable de Ondabike,Sports1M,True,filmed,human_filmed
+264,pSMQWsEi7ldbuD++/Giz,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+265,8pUYyrUcHlb1RrfH3H2y,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+266,GjCMo2GkJp6y5vricadg,Clip,Rendered,americandiner_005-1-5-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+267,7UETOWO5Z8aWuHDBJ2GG,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+268,Oup5uAZxF2G7zEJkT+ui,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+269,5zQTb77qI+ig8rigx1XU,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+270,ecUQJtcERZJGdqza1k7h,Clip,sports1m,2009 Krugers Cross Singlespeed Cyclocross Race - Helmet Cam,Sports1M,True,filmed,human_filmed
+271,KXdTNAGMo1gCWz2Ge8zr,Clip,Rendered,run82-ancientTomb-1-0,Rendered,True,rendered,cg_natural
+272,kEq0YeYOSSBtM1ZkWA1a,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+273,yv/S61fYnDSQcA9J6Nk8,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+274,VmwBOJU19AKcQHc6+W1X,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+275,YXM9r9BfOrHfH1PRx4gt,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+276,FXywFxQatU71thugk9W3,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+277,xhdrMZnd7QWSNxr0nboD,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+278,VQoko14sA4fsjEovQUOV,Clip,sports1m,2011 June 28 Midweek MTB Round Valley XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+279,AR5NmjM8+bBshIXgG/wH,Clip,sports1m,2011 June 28 Midweek MTB Round Valley XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+280,XmlFZr56XiH1B+J5zNEx,Clip,sports1m,2 of 2 - 2011 ICup Cholla Challenge XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+281,A3yVhenIDGZUA0r9Bg1z,Clip,Rendered,medievalsewer_071-1-6-70-0_54.173.97.201,Rendered,True,rendered,cg_natural
+282,HM+OgD8yKfeMGSL/gz0Q,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+283,PMoSd6ymRqEhlAhsPEUo,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+284,Xr89YxGG5sxFyt0Ssbr1,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+285,yguuTn1vtCLFWYadxfdr,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+286,3hTVJv+ZzJcU6K44nq1L,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+287,kv62tk7vSxNPofuraDzE,Clip,sports1m,1984 Winter Olympics - Womens Luge 3rd Run - Part 1,Sports1M,True,filmed,human_filmed
+288,rOa8Jx7+Sk2pNzt294hx,Clip,sports1m,2011 July 23 ICUP Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+289,d/DXcrEmXcFsX7QTvJfW,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+290,Dhfw5sq7tlrGAb6BxpfK,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+291,vrPb1bCZAvfN/DnNKu3O,Clip,Rendered,swamp_029-1-11-70-0_54.205.66.32,Rendered,True,rendered,cg_natural
+292,JbIGSh3TvSRLjMJoP07l,Clip,sports1m,2011 August 30 Midweek MTB Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+293,iA7ZE9FAyOWMv6cGVQwC,Clip,Rendered,mountainlake_121-1-0-70-0_54.162.127.170,Rendered,True,rendered,cg_natural
+294,9ounQdSFRtnJty4PPZBg,Clip,Rendered,swamp_058-1-11-70-0_52.207.221.173,Rendered,True,rendered,cg_natural
+295,6gp9DKVQeh798Pqvj3Xp,Clip,Rendered,medievalsewer_087-1-6-70-0_54.162.127.170,Rendered,True,rendered,cg_natural
+296,YW1iE70tSORm8z25EwV0,Clip,Rendered,subway_130-1-3-70-0_52.205.253.179,Rendered,True,rendered,cg_natural
+297,d+hNjQgWYWkc6tOQe8F5,Clip,Rendered,swamp_041-1-11-70-0_54.159.174.165,Rendered,True,rendered,cg_natural
+298,QmynNYnz4Q0hMBpTZ/xv,Clip,Cinematic,Koyaanisqatsi: Life Out of Balance (1982),Cinematic,True,filmed,human_filmed
+299,gpu0WyfdPMgXV/xhy6ZP,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+300,0ir9/br3yxbe2BBf65zF,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+301,NM2SnnQwIoj8iKOMP6xA,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+302,F5KOXJGuqZljKK9USGu/,Clip,sports1m,2010 WORLDS Jake Clark (USA) dec T Tounousidis (GRE) 84 kg GR,Sports1M,True,filmed,human_filmed
+303,uWDM4AAJ+PIdXzpPxOha,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+304,GjCMo2GkJp6y5vricadg,Clip,Rendered,americandiner_005-1-5-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+305,7UETOWO5Z8aWuHDBJ2GG,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+306,Oup5uAZxF2G7zEJkT+ui,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+307,5zQTb77qI+ig8rigx1XU,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+308,ecUQJtcERZJGdqza1k7h,Clip,sports1m,2009 Krugers Cross Singlespeed Cyclocross Race - Helmet Cam,Sports1M,True,filmed,human_filmed
+309,KXdTNAGMo1gCWz2Ge8zr,Clip,Rendered,run82-ancientTomb-1-0,Rendered,True,rendered,cg_natural
+310,LiWmwZ237ZWW3eK3UWGa,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+311,AZvr1UF39ygFqNxKr/8K,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+312,clN4ica4q7huSnWVFTFi,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+313,WD0uyxvusJmVxfeKu9mZ,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+314,aVi6HP+Mx0PmirJtpYEi,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+315,ZJvulWBItHtLlDVkIntm,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+316,U6NqQRL+v/N/9xnLSH2y,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+317,L1QltnXeJf57fZSqA8hm,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+318,MJaYmWVO0j7nICBggS2b,Clip,Cinematic,Powaqqatsi: Life in Transformation (1988),Cinematic,True,filmed,human_filmed
+319,jhCw/QuyP/gODgckw5ly,Clip,sports1m,1 of 5 - 2010 ICup 2nd Annual Rock The Canyons XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+320,GQ1bk6lqVx+izwUnx9bx,Clip,Rendered,swamp_025-1-11-70-0_54.173.97.201,Rendered,True,rendered,cg_natural
+321,vKIM/Zjig7bnlvKUxQxU,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+322,EmwsXRJ/RZoQT9Ni7UK1,Clip,Rendered,run27-mountainLake-1-0,Rendered,True,rendered,cg_natural
+323,fn8HY3SLgJKNKeAP1AFV,Clip,sports1m,2011 June 14 Midweek MTB Corner Canyon XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+324,c6il6/HFHBatfpiQJdgg,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+325,99IJStq/7uCOm6ZQvZXf,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+326,K7ghyTmBpatAUFHymTb8,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+327,Dp7wDh2IrVZLCLrpGLuv,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+328,KjDfO15MEsKyQ1ecL7gs,Clip,Rendered,run257-mountainLake-1-0,Rendered,True,rendered,cg_natural
+329,W72D46ICk0GV1uh0E98o,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+330,rKhBb2Q+dILxw3t33TsJ,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+331,YfqXNa8nksH/H4Q7tw5G,Clip,Rendered,lowpolyjungle_118-1-9-70-0_54.83.154.242,Rendered,True,rendered,cg_natural
+332,OFk94miLCLRW7fhR6BQE,Clip,Rendered,swamp_075-1-11-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+333,VIxFQLvrzWwvLKX9CM5N,Clip,sports1m,1995 bmx vert bs contest  mat hoffman bike park okc,Sports1M,True,filmed,human_filmed
+334,R2YTk1TGlZui9PbML2e7,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+335,YLuStB2eXkgOS+Cescsy,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+336,+rgSVBVRE8Ij1WNhq8ZW,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+337,avHG2QBqnb9F/xY78GmI,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+338,NkpZ1hOR9yfSFQshDQ4V,Clip,Rendered,mountainlake_049-1-0-70-0_34.203.243.27,Rendered,True,rendered,cg_natural
+339,ylycAJlvU8086/o3Ub0j,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+340,Woh3Beown4h4UkK0nsbP,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+341,GZSBSutw2PnAYx6RLOZn,Clip,sports1m,2011 July 23 ICUP Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+342,DFdyLnc1fI6I7ZxhMOcD,Clip,sports1m,2011 Frozen Hog Mountain Bike Race,Sports1M,True,filmed,human_filmed
+343,iGOF1Y9iuiY6Ob0w1DOS,Clip,Cinematic,Koyaanisqatsi: Life Out of Balance (1982),Cinematic,True,filmed,human_filmed
+344,GjCMo2GkJp6y5vricadg,Clip,Rendered,americandiner_005-1-5-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+345,7UETOWO5Z8aWuHDBJ2GG,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+346,Oup5uAZxF2G7zEJkT+ui,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+347,5zQTb77qI+ig8rigx1XU,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+348,ecUQJtcERZJGdqza1k7h,Clip,sports1m,2009 Krugers Cross Singlespeed Cyclocross Race - Helmet Cam,Sports1M,True,filmed,human_filmed
+349,KXdTNAGMo1gCWz2Ge8zr,Clip,Rendered,run82-ancientTomb-1-0,Rendered,True,rendered,cg_natural
+350,NWqTwzuwGakTM37kHKK4,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+351,ik5DKO+EInbAGwcH0BfB,Clip,sports1m,2011 June 14 Midweek MTB Corner Canyon XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+352,dHvGJAD7cN8KboJxFF4/,Clip,sports1m,2011 June 14 Midweek MTB Corner Canyon XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+353,zlQ935qW1A8YOiseS7gY,Clip,Rendered,medievalsewer_132-1-6-70-0_54.210.37.143,Rendered,True,rendered,cg_natural
+354,XoerXglPXrngFUI5uTG6,Clip,sports1m,1 of 5 - 2010 ICup 2nd Annual Rock The Canyons XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+355,EKhyHmLj04EcBoR25T/e,Clip,Rendered,americandiner_079-1-5-70-0_184.73.123.94,Rendered,True,rendered,cg_natural
+356,UIRT1CCHgVDfheNGYQd6,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+357,Qtx9ZilPEN9mdem3G1lL,Clip,sports1m,2012 July 17 Midweek MTB Deer Valley Silver Lake Lodge XC Race (Stabilized),Sports1M,True,filmed,human_filmed
+358,8PA1UPAZQPiLL4qyfbe0,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+359,yCXacouyIMBJMNQBQeSe,Clip,sports1m,2009 Univest Grand Prix Road Race PA,Sports1M,True,filmed,human_filmed
+360,cX1uqe3yuBtkCRNeZPSD,Clip,Rendered,lowpolyjungle_125-1-9-70-0_54.175.147.171,Rendered,True,rendered,cg_natural
+361,0JcYLY6eaQxNgD0AqyHf,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+362,h8yYhmXV5vyXqPxkXt5a,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+363,SzeVJsDzE+Ceeb3XK4TT,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+364,GHn0W57E+2PS+Qr5yD2r,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+365,Sqv4lziRTQgtkUPYRRiM,Monet2,UNKNOWN,UNKNOWN,Monet2,False,parametric,parametric
+366,JOYs8Wny1GJlw6AxCVo5,Clip,Rendered,lowpolyjungle_015-1-9-70-0_54.175.147.171,Rendered,True,rendered,cg_natural
+367,mG4xsIyTTnaRWKW82yeD,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+368,hnYVTt6SOC5gw43jdDOb,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+369,HvUTYlGssHeK5Ub4iNLY,Clip,Rendered,mountainlake_075-1-0-70-0_52.205.253.179,Rendered,True,rendered,cg_natural
+370,pBsrFShgY2qLi+7xYSGi,Clip,sports1m,1984 Winter Olympics - Mens Luge 1st run - Part 1,Sports1M,True,filmed,human_filmed
+371,IPvYT7eXLYJ557HrVPnG,Clip,sports1m,1 of 7 - 2010 ICup Utah Open State Championship XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+372,ubOIjeUGbsNAJqMPIDqU,Clip,Rendered,mountainlake_066-1-0-70-0_54.205.66.32,Rendered,True,rendered,cg_natural
+373,ihsP/Q14/eSpxdQLR3F4,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+374,ClffawlgRfZbgKwX6zRB,Clip,Rendered,ancienttomb_100-1-4-70-0_54.209.141.225,Rendered,True,rendered,cg_natural
+375,aedxogPGpb5IiLcjLo8c,Clip,sports1m,2012 January 28 Frozen Hog Snow Mountain Bike Race,Sports1M,True,filmed,human_filmed
+376,3wXTReOQa7mnr6Oz8aUf,Clip,sports1m,2012 May 28 ICUP 7th Annual Stan Crane Memorial XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+377,0eP/PPhAGmbJ2peZOa/E,Clip,Rendered,ancienttomb_105-1-4-70-0_54.89.40.102,Rendered,True,rendered,cg_natural
+378,APccFaui8xmgaLPZxjAA,Clip,sports1m,2011 June 25 USCS Round Valley XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+379,hclIiiBW4rID0gjoYwbv,Clip,sports1m,14 ª volta ciclistica internacional do grande A B C D 2011 elite,Sports1M,True,filmed,human_filmed
+380,ZW5GVcDmKHQQrQdljO9u,Clip,sports1m,1984 Winter Olympics - Mens Luge 2nd Run - Part 1,Sports1M,True,filmed,human_filmed
+381,YWz8BdF7JHpb7SyGU3LO,Clip,Rendered,run125-lowPolyJungle-1-0,Rendered,True,rendered,cg_natural
+382,otpDc+UZTnv0+G/1LL/A,Clip,Rendered,lowpolyjungle_129-1-9-70-0_52.87.152.28,Rendered,True,rendered,cg_natural
+383,4ZE6JPeH4hCIesp0aRIB,Clip,Rendered,kowloon_110-1-8-70-0_54.209.141.225,Rendered,True,rendered,cg_natural
+384,GjCMo2GkJp6y5vricadg,Clip,Rendered,americandiner_005-1-5-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+385,7UETOWO5Z8aWuHDBJ2GG,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+386,Oup5uAZxF2G7zEJkT+ui,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+387,5zQTb77qI+ig8rigx1XU,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+388,ecUQJtcERZJGdqza1k7h,Clip,sports1m,2009 Krugers Cross Singlespeed Cyclocross Race - Helmet Cam,Sports1M,True,filmed,human_filmed
+389,KXdTNAGMo1gCWz2Ge8zr,Clip,Rendered,run82-ancientTomb-1-0,Rendered,True,rendered,cg_natural
+390,4tIOoaR5VNXdEFB3JLsd,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+391,wrhbg7/9C5fsnGqt95w/,Clip,sports1m,2012 UNIV WORLDS Erickson (USA) dec Allikma (EST) 120 kg Greco repechage,Sports1M,True,filmed,human_filmed
+392,gnKtNfR9QYEW0PRkfRU4,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+393,LfckM0X1gCCgUlsmXIea,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+394,Ta17hPcaONVDy5sPjE9z,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+395,mpoHL5UE5tDtz7b51b3H,Clip,Rendered,americandiner_042-1-5-70-0_54.173.97.201,Rendered,True,rendered,cg_natural
+396,hA5XiO9Yr2bp3AGbwXFy,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+397,9po9C2T7WMn+mrqLtKQ3,Clip,sports1m,2012 UNIV WORLDS Stenberg (USA) dec Sasunouski (BLR) 84 kg Greco bout,Sports1M,True,filmed,human_filmed
+398,vx7im5YbRu12xdbgyuN0,Clip,sports1m,1 of 5 - 2011 True Grit Epic Endurance Mountain Bike Race,Sports1M,True,filmed,human_filmed
+399,4CyhP0dvBfefTNFiZDql,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+400,SPLLOEhFGFlgL0mkoyPB,Clip,sports1m,2011 July 6 Weekly Race Series Sundance XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+401,nA5Nl94Ii007u2gfYnFL,Clip,sports1m,2009FIS WORLD CHAMPIONSHIP DUALMOGULS CEREMONY,Sports1M,True,filmed,human_filmed
+402,Vdi70xOyBQEeDGhPVulx,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+403,FwG4V5nAZdXPlcAEu/X9,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+404,kkGYIdGYxoLQv3Sbu77y,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+405,DXaO78h5gLfPRgbxiutg,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+406,Mg5bLgoNvze3EPLB9rbZ,Clip,sports1m,2011 KIA X-GAME Aggressive Inline VERT Final,Sports1M,True,filmed,human_filmed
+407,yfFAPn1QpVQmEC2iXg07,Clip,Rendered,swamp_103-1-11-70-0_54.162.127.170,Rendered,True,rendered,cg_natural
+408,fSfoxctVyPEoVzFOpsAw,Clip,Rendered,ancienttomb_068-1-4-70-0_34.239.124.192,Rendered,True,rendered,cg_natural
+409,5Q4+LRPdnmpiazfLNOdJ,Clip,Rendered,mountainlake_006-1-0-70-0_184.73.123.94,Rendered,True,rendered,cg_natural
+410,EyGfkWSsxEsE8f3GX5Ox,Clip,Rendered,lowpolyjungle_079-1-9-70-0_52.87.152.28,Rendered,True,rendered,cg_natural
+411,Lp/pttdcIH1AZsCOGZuG,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+412,tRgm529SPpQspr220FRm,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+413,IM+4otcj9xG0TMVozt83,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+414,sg7sThmmNsQIXxQkh8b5,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+415,+4gByvU9LfvSD0JHP6Ae,Trippy,UNKNOWN,UNKNOWN,Trippy,False,parametric,parametric
+416,Fdanbt5C5GTaqFv52S5s,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+417,neEOOD/7DThp+cyPZSPk,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+418,NEWFN4OCB3CRE26vVaam,Clip,sports1m,2007 Diamondback Response Sport - Playing around with my camera  sustainablesurvival,Sports1M,True,filmed,human_filmed
+419,yoX6EWgUDCdq6Pmd/xPz,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+420,PYU/dDCH3QiZYnyeSypM,Clip,Rendered,medievalsewer_095-1-6-70-0_54.83.154.242,Rendered,True,rendered,cg_natural
+421,3G9rbLbAPukU7tbyeRG+,Clip,sports1m,2010 King Of New York BMX Trails Random Footage,Sports1M,True,filmed,human_filmed
+422,GjCMo2GkJp6y5vricadg,Clip,Rendered,americandiner_005-1-5-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+423,7UETOWO5Z8aWuHDBJ2GG,Clip,Cinematic,Star Wars: Episode VII - The Force Awakens (2015),Cinematic,True,filmed,human_filmed
+424,Oup5uAZxF2G7zEJkT+ui,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+425,5zQTb77qI+ig8rigx1XU,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+426,ecUQJtcERZJGdqza1k7h,Clip,sports1m,2009 Krugers Cross Singlespeed Cyclocross Race - Helmet Cam,Sports1M,True,filmed,human_filmed
+427,KXdTNAGMo1gCWz2Ge8zr,Clip,Rendered,run82-ancientTomb-1-0,Rendered,True,rendered,cg_natural
+428,okYfMyn8qc2ClgvpS7WG,Clip,sports1m,2009 Skijoring Event in Whitefish Montana (part 1),Sports1M,True,filmed,human_filmed
+429,NHlF8hOkZ6psFRIVhB6N,Clip,Rendered,ancienttomb_107-1-4-70-0_54.165.28.255,Rendered,True,rendered,cg_natural
+430,AxNNo310kAl9uUSr+hXS,Clip,Rendered,medievalsewer_009-1-6-70-0_107.23.36.15,Rendered,True,rendered,cg_natural
+431,mjtZRmGqaXCHGB59txoI,Clip,Cinematic,Powaqqatsi: Life in Transformation (1988),Cinematic,True,filmed,human_filmed
+432,W50xYLSTlUixv1tOfuSJ,Clip,sports1m,2011 Boulder Cup Cyclocross Elite Women,Sports1M,True,filmed,human_filmed
+433,WpAnXD10RC/bdk0t5JIH,Clip,sports1m,1 of 5 - 2010 ICup 2nd Annual Rock The Canyons XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+434,MaN8zZQItdhsFNBq5/yl,Clip,Rendered,run213-darkTemple-1-0,Rendered,True,rendered,cg_natural
+435,18PTv0aCUhaUeL2r9kDd,Clip,sports1m,2012 July 10 Midweek MTB Corner Canyon XC Mountain Bike Race (Stabilized),Sports1M,True,filmed,human_filmed
+436,cK20wOm48y1gpxBcZuzN,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+437,s8DvZS/fghphUcTsLOzM,Clip,Cinematic,The Matrix (1999),Cinematic,True,filmed,human_filmed
+438,8IyLxfa6UikBgn/lOdpD,Clip,sports1m,2012 January 28 Frozen Hog Snow Mountain Bike Race,Sports1M,True,filmed,human_filmed
+439,AXD+rrWG8VbV+xLvzwfb,Clip,sports1m,2012 May 28 ICUP 7th Annual Stan Crane Memorial XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+440,JNYUnhFvI0mZbwN58E20,Clip,Rendered,swamp_124-1-11-70-0_34.239.124.192,Rendered,True,rendered,cg_natural
+441,7keiPs7vk9CHNrtDuOxL,Clip,sports1m,2012 July 17 Midweek MTB Deer Valley Silver Lake Lodge XC Race (Stabilized),Sports1M,True,filmed,human_filmed
+442,t24nBc6mpih4DR5C/qVP,Clip,Rendered,subway_016-1-3-70-0_52.205.253.179,Rendered,True,rendered,cg_natural
+443,JzIVwvytTHCEhcYc0EkS,Clip,sports1m,2012 UNIV WORLDS Stenberg (USA) dec Sasunouski (BLR) 84 kg Greco bout,Sports1M,True,filmed,human_filmed
+444,shDuGRZylVmZLCBFIVeP,Clip,sports1m,2011 July 23 ICUP Solitude XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+445,ysjy6YgGXX5+mcx52KSM,Clip,Cinematic,The Matrix Reloaded (2003),Cinematic,True,filmed,human_filmed
+446,3k5I6GgcLcVOVsTzPElo,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+447,SuCpcRhCNDfKoBoal3j2,Clip,Rendered,lowpolyjungle_066-1-9-70-0_34.239.124.192,Rendered,True,rendered,cg_natural
+448,vV2cAU0vqaayD3rp9JCu,Clip,Rendered,subway_127-1-3-70-0_54.173.97.201,Rendered,True,rendered,cg_natural
+449,DXzHZ8iLdr2x2fHDjXOM,Clip,Rendered,lowpolyjungle_100-1-9-70-0_54.210.37.143,Rendered,True,rendered,cg_natural
+450,ajRbt+xbcBjGuNECEVDu,Clip,Rendered,medievalsewer_021-1-6-70-0_54.196.24.32,Rendered,True,rendered,cg_natural
+451,+64BCnUTurcw/6w0Xroc,Clip,Cinematic,The Matrix Revolutions (2003),Cinematic,True,filmed,human_filmed
+452,Qx9ufZfqQaKwhbt/nVI4,Clip,sports1m,1999 FIS WorldCup Freestyle Ski Acro Heavenly FINAL,Sports1M,True,filmed,human_filmed
+453,Y7uy8l/xx7Rw6KPkPbHG,Clip,sports1m,2011 July 2 ICUP Dutch Hollow XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+454,ElfN68NajEerWSOHh8HX,Clip,Rendered,ancienttomb_082-1-4-70-0_54.175.147.171,Rendered,True,rendered,cg_natural
+455,CuNv3BiXJt09SWTDAP5k,Clip,sports1m,2012 May 28 ICUP 7th Annual Stan Crane Memorial XC Mountain Bike Race,Sports1M,True,filmed,human_filmed
+456,DN5M/X5CPEjARDMM24f3,Clip,sports1m,2012 USA Basketball vs The Dream Team 1992 USA Basketball - NBA 2K13,Sports1M,True,filmed,human_filmed
+457,5BCFSAbvGSKwHVHaFQNb,Clip,sports1m,2008 Lievin Cyclocross World Cup Mens Race (Part 1),Sports1M,True,filmed,human_filmed
+458,fLokJIhvJwiD3z5T5Hl3,Clip,sports1m,2011 KIA X-GAME Aggressive Inline VERT Round1 HEAT2,Sports1M,True,filmed,human_filmed
+459,SXIJN1Yir4oAIu2tE0or,Clip,Cinematic,Naqoyqatsi: Life as War (2002),Cinematic,True,filmed,human_filmed
+460,JL7a8UCWr1t5hekO51IT,Clip,Rendered,swamp_131-1-11-70-0_107.23.36.15,Rendered,True,rendered,cg_natural
+461,X9PPz38ZSR0Y2LS4yAX2,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+462,IXrsB1UAYdDJZTHYdZGS,Clip,Cinematic,Mad Max: Fury Road (2015),Cinematic,True,filmed,human_filmed
+463,3J5ucrYgPSVFuTXXmk1T,Clip,sports1m,2008 Japan Cup Cycle Road Race 2,Sports1M,True,filmed,human_filmed

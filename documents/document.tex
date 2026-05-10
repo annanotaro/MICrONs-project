@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{a4paper, margin=1in}
+
+\title{Brain Decoding: How the Visual System Categorizes the World}
+\author{MICrONs Project - Q3 Analysis}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{The Big Picture: From Movies to Categories}
+Our study of the mouse visual system has progressed through three main levels of "zooming out":
+\begin{itemize}
+    \item \textbf{Q1 (Categorization \& Behavior):} We established that the brain can categorize videos (Natural vs. Parametric) using average brain activity. Crucially, we learned that we \textbf{must} clean the data (behavioral regression) to separate the true visual response from noise caused by the mouse's movement (like running or pupil dilation). We also found that V1's massive number of neurons is highly redundant compared to higher areas like LM and RL.
+    \item \textbf{Q2 (Temporal Dynamics):} We proved that this category signal isn't just a static average; it evolves over time. By looking frame-by-frame, we found that combining multiple frames makes decoding much more accurate because the brain's signals are "smooth" and distributed across time. Both Logistic Regression and SVM gave identical results, confirming our findings reflect real biology, not just a software artifact.
+    \item \textbf{Q3 (The Deep Dive):} This is our current focus. We take the temporal tools from Q2 and apply them to the entire dataset to study \textit{what kind} of movie the mouse is seeing (Natural vs. Rendered vs. Parametric), while also analyzing the "stability" of the neural response.
+\end{itemize}
+
+\section{What we are studying in Q3}
+Q3 takes the temporal tools we built in Q2 and applies them to the entire dataset. Instead of "cherry-picking" a few easy images, we ran a "for loop" across every single trial to see how the brain recognizes categories. 
+
+We focused on three big questions:
+\begin{enumerate}
+    \item \textbf{Natural vs. Artificial:} Can the brain distinguish between the real world and math-generated patterns?
+    \item \textbf{The "Deepfake" Challenge:} Can the brain spot the difference between a real film and a high-quality computer-generated version?
+    \item \textbf{The Stability Filter:} Does the brain communicate more clearly when its activity is "stable" or when it is "bursty" and variable?
+\end{enumerate}
+
+\section{Key Results and Headlines}
+
+\subsection{The Stability Paradox}
+The most surprising finding is that "noisy" or "unstable" brain activity often carries \textit{more} information. When we looked at trials where the firing rate fluctuated more (high CV), the accuracy of our "guesses" improved, particularly in higher visual areas like \textbf{AL}. This suggests the brain's "jitter" isn't just noise—it's a feature that helps encode complex category signals.
+
+\subsection{Spotting the "Deepfakes"}
+The mouse brain is surprisingly good at telling real film apart from computer-generated movies. While it is easier to spot abstract patterns, brain areas like \textbf{LM} and \textbf{V1} are exceptionally sensitive at detecting the subtle differences between filmed and rendered nature scenes, achieving nearly 80\% accuracy in source origin classification.
+
+\subsection{Area AL: The Category Champion}
+While all visual areas performed well, \textbf{Area AL} (Anterolateral) emerged as the champion for binary categorization in this session, reaching the highest peak accuracy in our time-resolved analysis. It also showed the strongest boost in performance during "unstable" activity, confirming its role as a sophisticated category processor.
+
+\section{Conclusion: A Robust and Dynamic System}
+By extending our Q2 logic to the full library of images, we discovered that the "Naturalness" signal is hard-wired and extremely robust. Even with just 25 neurons, the brain can accurately categorize a video. This signal isn't just a quick flash; it evolves over time, using highly dynamic and variable activity to distinguish the real world from the artificial.
+
+\newpage
+\section{Cherry-Picked Visual Results}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/q3_radar_summary_5_6.png}
+    \caption{Summary Radar Chart showing categorization performance across all brain areas (Session 5\_6).}
+    \textit{} This chart proves that category recognition isn't limited to one small spot; it's a system-wide "vibe" check. It also highlights Area AL as a top performer in this session, consistently identifying the video's source and category.
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/q3_stable_vs_unstable_5_6.png}
+    \caption{The Stability Paradox: "Unstable" trials (dashed) often carry more information than "Stable" trials (solid), especially in Area AL.}
+    \textit{} This finding flips the standard assumption that "calm" brain activity is better. It suggests that the brain's "flicker" or variability is actually where the most complex information about categories is stored.
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/q3_confusion_3class_5_6.png}
+    \caption{Confusion Matrices: Demonstrating the brain's ability to distinguish Filmed, Rendered, and Parametric sources.}
+    \textit{} This result demonstrates the high resolution of the visual system. It proves the mouse brain doesn't just see "moving shapes"—it can actually tell the difference between the organic textures of a real forest and the mathematical precision of a computer-generated one.
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/q3_time_accuracy_binary_5_6.png}
+    \caption{Temporal Evolution: How the "Natural vs Artificial" guess evolves frame-by-frame.}
+    \textit{} This allows us to see the "speed of thought." It reveals that the brain recognizes the "Natural" category almost immediately after the video starts, confirming that this is a fundamental, hard-wired part of the mouse's visual intelligence.
+\end{figure}
+
+\end{document}
