@@ -30,7 +30,8 @@ print(f"Session: {CHOSEN_SESSION}")
 print(f"Outputs → {RESULTS_DIR}")
 
 AREAS = ["V1", "LM", "AL", "RL"]
-N_MIN = 575
+# Per-session matched neuron count: smallest area's population
+
 N_FOLDS = 5
 RANDOM_STATE = 42
 
@@ -47,6 +48,9 @@ def make_classifier():
 data = np.load(RESULTS_DIR / f"features_{CHOSEN_SESSION}.npz", allow_pickle=True)
 X_by_area = {area: data[f"X_{area}"] for area in AREAS}
 y_label = data["y_label"]
+# NOW compute N_MIN — after X_by_area exists
+N_MIN = min(X_by_area[a].shape[1] for a in AREAS)
+print(f"Matched neuron count for paired comparisons: N_MIN = {N_MIN}")
 
 # Restrict to Q1c (three natural classes)
 q1c_mask = np.isin(y_label, ["Cinematic", "Sports1M", "Rendered"])

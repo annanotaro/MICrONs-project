@@ -46,7 +46,7 @@ N_SUBSAMPLES = 10
 N_PAIRED_SEEDS = 50
 N_PERM_SHUFFLES = 100
 NEURON_COUNTS = [25, 50, 100, 200, 400, 575]
-N_MIN = 575  # bottleneck area (AL) count
+
 RANDOM_STATE = 42
 
 # ======================================================================
@@ -81,10 +81,18 @@ def evaluate_subsampled(X_full, y, n_neurons, n_repeats, base_seed):
 # ======================================================================
 # Load data & define questions
 # ======================================================================
+# Load data
 data = np.load(RESULTS_DIR / f"features_{CHOSEN_SESSION}.npz", allow_pickle=True)
 X_by_area = {area: data[f"X_{area}"] for area in AREAS}
 y_label = data["y_label"]
 y_natural = data["y_natural"]
+
+# NOW compute N_MIN — after X_by_area exists
+N_MIN = min(X_by_area[a].shape[1] for a in AREAS)
+print(f"Matched neuron count for paired comparisons: N_MIN = {N_MIN}")
+NEURON_COUNTS = [n for n in NEURON_COUNTS if n <= N_MIN] + [N_MIN]
+NEURON_COUNTS = sorted(set(NEURON_COUNTS))
+# Then questions, then Part 1, etc.
 
 questions = [
     ("Q1a", "natural vs parametric",

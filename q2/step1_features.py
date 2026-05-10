@@ -1,8 +1,8 @@
 import os
-import os
 import sys
-import importlib.util
+import h5py
 import numpy as np
+import pandas as pd
 from pathlib import Path
 from tqdm import tqdm
 
@@ -33,21 +33,11 @@ print(f"Session: {CHOSEN_SESSION}")
 print(f"Outputs -> {RESULTS_DIR}")
 
 # -------------------------
-# LOAD READER
-# -------------------------
-spec = importlib.util.spec_from_file_location("microns_reader", READER_PATH)
-reader_module = importlib.util.module_from_spec(spec)
-sys.modules["microns_reader"] = reader_module
-spec.loader.exec_module(reader_module)
-MicronsReader = reader_module.MicronsReader
-
-# -------------------------
 # LOAD TRIAL LABELS
 # -------------------------
 trials_path = RESULTS_DIR / f"trials_{CHOSEN_SESSION}.csv"
 trials_df = pd.read_csv(trials_path)
 
-# Keep only the 3 natural classes for Q2
 trials_df = trials_df[trials_df["label"].isin(["Cinematic", "Sports1M", "Rendered"])].reset_index(drop=True)
 
 print(f"Loaded {len(trials_df)} natural trials from {trials_path}")
@@ -55,28 +45,24 @@ print("\nLabel counts:")
 print(trials_df["label"].value_counts())
 
 # -------------------------
-# LOAD AREA INDICES
+# LOAD AREA INDICES + PREALLOCATE
 # -------------------------
-area_indices = {}
 with h5py.File(DATA_PATH, "r") as f:
+    area_indices = {}
     for area in AREAS:
         path = f"sessions/{CHOSEN_SESSION}/meta/area_indices/{area}"
         area_indices[area] = f[path][:]
         print(f"  {area}: {len(area_indices[area])} neurons")
 
+    # get n_time from first trial
+    t0_idx = int(trials_df.iloc[0]["trial_idx"])
+    r0 = f[f"sessions/{CHOSEN_SESSION}/trials/{t0_idx}/responses"][:]
+    n_time = r0.shape[1] - FRAMES_TO_DROP
+
 n_trials = len(trials_df)
-
-# Determine number of timepoints after dropping onset frames
-with MicronsReader(DATA_PATH) as reader:
-    example_trial = reader.get_trial(CHOSEN_SESSION, int(trials_df.iloc[0]["trial_idx"]))
-    n_time = example_trial["responses"].shape[1] - FRAMES_TO_DROP
-
 print(f"\nTrials: {n_trials}")
 print(f"Timepoints per trial after dropping onset: {n_time}")
 
-# -------------------------
-# PREALLOCATE ARRAYS
-# -------------------------
 X = {
     area: np.zeros((n_trials, len(idx), n_time), dtype=np.float32)
     for area, idx in area_indices.items()
@@ -87,15 +73,13 @@ X = {
 # -------------------------
 print("\nLoading time-resolved responses...")
 
-with MicronsReader(DATA_PATH) as reader:
+with h5py.File(DATA_PATH, "r") as f:
     for i, row in enumerate(trials_df.itertuples(index=False)):
-        trial = reader.get_trial(CHOSEN_SESSION, int(row.trial_idx))
-        responses = trial["responses"]  # (n_neurons, n_time)
-
+        responses = f[f"sessions/{CHOSEN_SESSION}/trials/{int(row.trial_idx)}/responses"][:]
         ts = responses[:, FRAMES_TO_DROP:]
 
         for area, idx in area_indices.items():
-            X[area][i] = ts[idx]
+            X[area][i] = ts[idx, :n_time]
 
         if (i + 1) % 50 == 0 or i == n_trials - 1:
             print(f"  {i+1}/{n_trials}")

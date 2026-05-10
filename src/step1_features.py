@@ -44,7 +44,7 @@ MicronsReader = reader_module.MicronsReader
 # Load trial labels from Step 0
 # ---------------------------------------------------------------
 trials_df = pd.read_csv(RESULTS_DIR / f"trials_{CHOSEN_SESSION}.csv")
-print(f"Loaded {len(trials_df)} trials from {RESULTS_DIR / f"trials_{CHOSEN_SESSION}.csv"}")
+print(f"Loaded {len(trials_df)} trials from {RESULTS_DIR / f'trials_{CHOSEN_SESSION}.csv'}")
 print(trials_df["label"].value_counts().to_string())
 print()
 
