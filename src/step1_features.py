@@ -4,6 +4,8 @@ import h5py
 import numpy as np
 import pandas as pd
 from pathlib import Path
+import os
+
 
 READER_PATH = os.environ.get(
     "MICRONS_READER_PATH",
@@ -14,8 +16,6 @@ DATA_PATH = os.environ.get(
     r"C:\data\microns\microns.h5"
 )
 
-
-import os
 import sys
 from pathlib import Path
 

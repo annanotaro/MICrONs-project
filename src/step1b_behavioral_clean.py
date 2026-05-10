@@ -3,6 +3,8 @@ import h5py
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+import os
+
 
 READER_PATH = os.environ.get(
     "MICRONS_READER_PATH",
@@ -14,7 +16,6 @@ DATA_PATH = os.environ.get(
 )
 
 
-import os
 import sys
 from pathlib import Path
 

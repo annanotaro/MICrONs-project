@@ -19,6 +19,7 @@ import h5py
 # ------------------------------------------------------------------
 DATA_PATH = r"C:\data\microns\microns.h5"
 MIN_AL_NEURONS = 200   # skip sessions with too-small AL populations
+SKIP_SESSIONS = {"7_4"}  # sessions to always exclude from auto-discovery
 
 SCRIPTS = [
     "step0_explore_session.py",
@@ -41,6 +42,9 @@ else:
         all_sessions = list(f["sessions"].keys())
         sessions_to_run = []
         for sess in all_sessions:
+            if sess in SKIP_SESSIONS:
+                print(f"Skipping {sess}: in SKIP_SESSIONS")
+                continue
             al_path = f"sessions/{sess}/meta/area_indices/AL"
             if al_path in f:
                 n_al = f[al_path].shape[0]
@@ -68,7 +72,7 @@ for i, sess in enumerate(sessions_to_run):
         script_start = time.time()
 
         result = subprocess.run(
-            ["python", str(script_path), sess],
+            [sys.executable, str(script_path), sess],
             capture_output=False,     # show output live
             text=True,
         )
