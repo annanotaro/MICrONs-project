@@ -1,0 +1,13 @@
+pair,origin_a,origin_b,area,acc_mean,acc_std,chance,n_neurons
+filmed_vs_rendered,filmed,rendered,V1,0.6977508295625943,0.021644799707158834,0.5,468
+filmed_vs_rendered,filmed,rendered,LM,0.7463911010558069,0.012753177337822915,0.5,468
+filmed_vs_rendered,filmed,rendered,AL,0.6626093514328808,0.0,0.5,468
+filmed_vs_rendered,filmed,rendered,RL,0.6882975867269986,0.020755990318722765,0.5,468
+filmed_vs_parametric,filmed,parametric,V1,0.9758569004524886,0.010876244394941321,0.5,468
+filmed_vs_parametric,filmed,parametric,LM,0.9608267345399698,0.008772935871404867,0.5,468
+filmed_vs_parametric,filmed,parametric,AL,0.9387914781297134,0.0,0.5,468
+filmed_vs_parametric,filmed,parametric,RL,0.9470682503770739,0.0063962908491396065,0.5,468
+rendered_vs_parametric,rendered,parametric,V1,0.9778403846153845,0.0060375308567454785,0.5,468
+rendered_vs_parametric,rendered,parametric,LM,0.9617576923076923,0.00967899039309293,0.5,468
+rendered_vs_parametric,rendered,parametric,AL,0.9618653846153847,0.0,0.5,468
+rendered_vs_parametric,rendered,parametric,RL,0.9619307692307691,0.005281724379976235,0.5,468

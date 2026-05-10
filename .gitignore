@@ -9,9 +9,6 @@ features_*.npz
 Thumbs.db
 
 # ignore data
-q2/results/
-q3/results/
-*.npz
 
 .env
 
