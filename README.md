@@ -26,9 +26,9 @@ area. Parenthesised counts give the number of sessions significant after Bonferr
 
 | Folder | Contents |
 |---|---|
-| [`01_category_decoding/`](01_category_decoding) | Trial-mean decoding across areas: natural vs. parametric, Monet2 vs. Trippy, and the three-way natural contrast. Neuron-count-matched subsampling, permutation nulls, paired area statistics. **Produces the main result.** |
-| [`02_time_resolved_decoding/`](02_time_resolved_decoding) | Per-frame clip-category decoding on a single session, LR vs. linear SVM, with temporal averaging. |
-| [`exploratory/`](exploratory) | Superseded single-session pipeline. Not part of the report — see the folder README. |
+| [`category_decoding/`](01_category_decoding) | Trial-mean decoding across areas: natural vs. parametric, Monet2 vs. Trippy, and the three-way natural contrast. Neuron-count-matched subsampling, permutation nulls, paired area statistics. **Produces the main result.** |
+| [`time_resolved_decoding/`](02_time_resolved_decoding) | Per-frame clip-category decoding on a single session, LR vs. linear SVM, with temporal averaging. |
+| [`extra/`](extra) | Superseded single-session pipeline. Not part of the report; see the folder README. |
 | [`utils/`](utils), [`reader.py`](reader.py) | Data access and shared helpers. |
 | [`docs/DATASET.md`](docs/DATASET.md) | HDF5 schema and `MicronsReader` API. |
 | [`documents/`](documents) | Report source and PDF. |
@@ -111,8 +111,8 @@ across sessions, so within-session contrasts are matched but cross-session pooli
 ## Reproducing
 
 ```bash
-git clone https://github.com/annanotaro/<repo> && cd <repo>
-uv sync                      # or: pip install -r requirements.txt
+git clone https://github.com/annanotaro/Microns-visual-decoding
+cd Microns-visual-decodinguv sync                      # or: pip install -r requirements.txt
 cp .env.example .env         # point DATA_PATH at microns.h5
 python main_runner.py --question 1
 ```

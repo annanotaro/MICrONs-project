@@ -21,3 +21,5 @@ build/
 .ipynb_checkpoints
 *.log
 CLAUDE.md
+
+scratch/
