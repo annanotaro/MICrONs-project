@@ -1,238 +1,124 @@
----
-license: cc-by-4.0
-task_categories:
-- feature-extraction
-- time-series-forecasting
-viewer: false
-language:
-- en
-tags:
-- neuroscience
-- calcium-imaging
-- biology
-- multimodal
-pretty_name: MICrONS Functional Activity Dataset (14 Sessions)
-size_categories:
-- 1K<n<10K
----
+# Neural Decoding of Visual Stimuli in Mouse Visual Cortex
 
-# MICrONS Functional Activity Dataset & Reader
+Linear decoding of visual stimulus category from two-photon population activity in four mouse
+visual areas (V1, LM, AL, RL), using the MICrONS functional dataset. We ask whether decodability
+varies systematically along the putative cortical hierarchy, and whether any such differences
+survive controls for population size and behavioural state.
 
-This repository contains a curated portion of the MICrONS (Multi-Scale Networked Analysis of Cellular Responding Order) dataset. It consists of functional calcium imaging data from the visual cortex of mice in response to various visual stimuli: natural clips (`Clip`) and parametric videos (`Monet2`, `Trippy`).
+> **Main result.** On the finest contrast — discriminating three *natural* video categories
+> (Cinematic / Sports1M / Rendered) — **LM is the best decoder in 9/10 sessions**, beating V1 by
+> Δ = +0.031 (significant in 10/10 sessions) and AL/RL by Δ ≈ +0.05 (9–10/10), Bonferroni-corrected.
+> This **inverts** the naive expectation of a strict V1 → higher-area gradient of categorical
+> abstraction. Coarse contrasts (natural vs. parametric; Monet2 vs. Trippy) are at ceiling in every
+> area and cannot distinguish the hierarchy at all.
 
-Videos have been downsampled to match the neural activity scan frequency, with each frame corresponding to the stimulus frame appearing at least 66 ms before scan time. Neural responses are linearly interpolated at each stimulus frame timestamp to align with the video.
+![Pairwise area differences in balanced accuracy](figures/fig2_pairwise_area_differences.png)
 
-The data is organized into a highly efficient, indexed HDF5 format, allowing for rapid cross-session analysis based on either stimulus identity or brain anatomy.
+*Pairwise area differences in balanced accuracy (clean features, mean across 10 sessions).
+Right panel (Q1c, the fine natural contrast) carries the effect: LM beats every other area.
+Parenthesised counts = sessions significant after Bonferroni correction.*
+
+📄 **[Full report (PDF)](documents/report.pdf)** · 11 pages, 14 figures
 
 ---
 
-## 📊 Dataset Overview
+## Research questions
 
-| Property | Detail |
-|---|---|
-| Sessions | 14 sessions of registered neural activity |
-| Stimuli | 3 categories (`Clip`, `Monet2`, `Trippy`) identified by unique condition hashes |
-| Neural Data | Calcium traces from thousands of neurons across V1, LM, RL, AL |
-| Treadmill | Running speed (cm/s) synchronized to stimulus frames |
-| Pupil Size | Major and minor radius of the fitted pupil ellipse (in pixels) |
-| Eye Tracking | Pupil center coordinates (x, y) for gaze analysis |
+| | Question | Chance | Folder |
+|---|---|---|---|
+| **Q1a** | Natural vs. parametric stimuli | 0.50 | [`q1/`](q1) |
+| **Q1b** | Parametric discrimination (Monet2 vs. Trippy) | 0.50 | [`q1/`](q1) |
+| **Q1c** | Natural discrimination (Cinematic vs. Sports1M vs. Rendered) | 0.33 | [`q1/`](q1) |
+| **Q2** | Time-resolved, per-frame clip-category decoding | 0.33 | [`q2/`](q2) |
 
-### Temporal alignment & sampling
+## Results
 
-All data streams — neural responses, pupil, and treadmill — were independently interpolated to 30 Hz to match the stimulus frame rate, aligning every signal to a common stimulus clock. The full 30 Hz timeseries was then uniformly downsampled by a factor of 4, yielding a final sampling rate of **7.5 Hz** for all stored signals. As a result, `responses`, `treadmill`, `pupil`, and `stim_times` share an identical time axis within every trial, with each sample corresponding to a stimulus frame spaced ~133 ms apart.
+**Q1 — trial-mean decoding, balanced accuracy at matched neuron count (mean ± SD, 10 sessions):**
 
----
+| | V1 | LM | AL | RL |
+|---|---|---|---|---|
+| Q1a *(chance 0.50)* | **0.959** ± 0.016 | 0.951 ± 0.015 | 0.918 ± 0.020 | 0.936 ± 0.022 |
+| Q1b *(chance 0.50)* | **0.994** ± 0.006 | 0.988 ± 0.009 | 0.979 ± 0.019 | 0.980 ± 0.015 |
+| Q1c *(chance 0.33)* | 0.647 ± 0.033 | **0.677** ± 0.036 | 0.621 ± 0.061 | 0.622 ± 0.058 |
 
-## 🗂️ Internal HDF5 Structure
+All 120/120 (session × area × question) cells decode significantly above the shuffle-label null.
+Q1a and Q1b saturate; **Q1c is the only contrast that separates the areas**, and there LM leads.
 
-The file is organized to minimize redundancy: each unique video stimulus is stored once under `/videos/` and linked to every trial across all sessions via HDF5 SoftLinks. The `/sessions/` group is the source of truth for all neural and behavioral recordings.
-```text
-root/
-├── 📂 BRAIN_AREAS/                              # Anatomical index (SoftLinks only)
-│   └── 📂 <area_name>/                          # e.g., V1, AL, LM, RL
-│       └── 🔗 <session_id>                      -> /sessions/<session_id>
-│
-├── 📂 SESSIONS/                                 # Primary neural data storage
-│   └── 📂 <session_id>/                         # e.g., 4_7, 5_6
-│       ├── 📂 META/                             # Session-wide metadata
-│       │   ├── 📂 AREA_INDICES/                 # Pre-computed neuron index masks per area
-│       │   │   └── 📄 <area_name>               [Dataset: (N_area_neurons,), int]
-│       │   ├── 📄 brain_areas                   [Dataset: (N_neurons,), bytes — area label per neuron]
-│       │   ├── 📄 coordinates                   [Dataset: (N_neurons, 3), float — motor coordinates x/y/z]
-│       │   ├── 📄 unit_ids                      [Dataset: (N_neurons,), int — unique neuron IDs]
-│       │   ├── 📄 condition_hashes              [Dataset: (N_trials,), bytes — hash per trial, in order]
-│       │   └── (Attr) fps                       [Float — scan acquisition rate]
-│       └── 📂 TRIALS/                           # One group per trial, indexed chronologically
-│           └── 📂 <trial_idx>/
-│               ├── 📄 responses                 [Dataset: (N_neurons, F), float — ΔF/F calcium traces]
-│               ├── 📄 treadmill                 [Dataset: (F,), float — running speed in cm/s]
-│               ├── 📄 pupil                     [Dataset: (4, F), float — rows: x, y, major_r, minor_r]
-│               ├── 📄 stim_times               [Dataset: (F,), float — stimulus frame timestamps in seconds]
-│               └── (Attr) condition_hash        [String — identifies the video shown in this trial]
-│
-├── 📂 TYPES/                                    # Stimulus category index (SoftLinks only)
-│   └── 📂 <stim_type>/                          # e.g., Clip, Monet2, Trippy
-│       └── 🔗 <encoded_hash>                    -> /videos/<encoded_hash>
-│
-└── 📂 VIDEOS/                                   # Stimulus library — each video stored once
-    └── 📂 <encoded_hash>/                       # URL-encoded condition hash (/ → %2F)
-        ├── 📄 clip                              [Dataset: (F, H, W), uint8 — grayscale frames]
-        ├── 📄 times                             [Dataset: (F,), float — relative frame timestamps in seconds, starting at 0]
-        ├── 📂 INSTANCES/                        # Reverse index: all trials that showed this video
-        │   └── 🔗 <session_id>_tr<trial_idx>    -> /sessions/<session_id>/trials/<trial_idx>
-        ├── (Attr) original_hash                 [String — raw unencoded hash]
-        ├── (Attr) type                          [String — one of: Clip, Monet2, Trippy]
-        │
-        │   # Clip-specific attributes/datasets:
-        ├── (Attr) movie_name                    [String]
-        ├── (Attr) short_movie_name              [String]
-        ├── (Attr) duration                      [Float — clip duration in seconds]
-        ├── (Attr) fps                           [Float — original stimulus frame rate]
-        │
-        │   # Monet2-specific attributes/datasets:
-        ├── 📄 directions                        [Dataset: (N_orientations,), float — grating directions in degrees]
-        ├── 📄 onsets                            [Dataset: (N_orientations,), float — onset times per grating]
-        ├── (Attr) duration                      [Float]
-        ├── (Attr) ori_coherence                 [Float — orientation coherence parameter]
-        ├── (Attr) fps                           [Float]
-        │
-        │   # Trippy-specific attributes/datasets:
-        ├── (Attr) temp_freq                     [Float — temporal frequency in Hz]
-        ├── (Attr) spatial_freq                  [Float — spatial frequency in cycles/degree]
-        ├── (Attr) duration                      [Float]
-        └── (Attr) fps                           [Float]
-```
+**Q2 — time-resolved decoding (Session 5_6, peak balanced accuracy, chance 33.3%):**
 
-### Key design notes
+| Window | Clf. | V1 | LM | AL | RL | Avg. |
+|---|---|---|---|---|---|---|
+| *w* = 1 | LR | 41.4% | 44.2% | **47.4%** | 42.6% | 43.9% |
+| *w* = 1 | SVM | 40.2% | 43.5% | 44.6% | 41.2% | 42.5% |
+| *w* = 5 | LR | 46.5% | 48.4% | **50.2%** | 48.5% | 48.4% |
+| *w* = 5 | SVM | 44.2% | 46.6% | 47.5% | 47.2% | 46.4% |
 
-- **`/brain_areas/` and `/types/`** contain only SoftLinks — no data. They serve as fast lookup indices.
-- **`/videos/<hash>/instances/`** allows reverse lookup: given a video, find every session and trial that presented it.
-- **`condition_hashes`** in session metadata are stored in trial order and may contain duplicates (the same video can be shown multiple times per session).
-- **`pupil`** rows are ordered `[x, y, major_r, minor_r]` consistently across all sessions.
-- **`stim_times`** are absolute timestamps in seconds; `times` inside `/videos/` are relative (starting at 0), computed as `stim_times - stim_times.min()`.
+Per-frame decoding is significant everywhere (*p* < 10⁻⁹; 0/50 shuffles exceeded the true accuracy)
+but stays below 50%. Five-frame temporal averaging adds a uniform **≈ +4.5 points** in every area —
+consistent with category information being distributed over time rather than locked to onset — and
+cross-area differences shrink under averaging, suggesting broadly distributed representation.
 
----
+**Behavioural confounds.** Regressing out pupil (4 features) and treadmill velocity before
+trial-averaging costs ≈ 0.03 accuracy on Q1a (largest in AL, −0.038), i.e. part of the coarse
+natural-vs-parametric contrast reflects covariation of arousal/locomotion with stimulus class.
+For Q1b and Q1c the effect is < 0.01 and inconsistent in sign — **the LM advantage is not a
+behavioural artefact.** All headline results are reported on cleaned features as the conservative
+estimate.
 
-## ⚙️ Setup & Installation
+**Confusion structure.** Cinematic ↔ Rendered is the dominant error in every area (off-diagonals
+0.19–0.23); Sports1M is the most reliably classified class (diagonal 0.64–0.71), plausibly because
+of its distinctive fast coherent motion. LM's advantage is spread across all three classes, not
+driven by one.
 
-### Option 1 — Clone the repository
+## Methods
 
-Since the dataset is stored as a large HDF5 file, Git LFS is required.
+- **Data.** 10 of 14 MICrONS sessions, selected at a matched imaging rate (~6.30 Hz; sessions 9_3,
+  9_4, 9_6 excluded at 8.62–9.62 Hz; 7_4 excluded as corrupted). 464 trials/session
+  (128 Cinematic, 128 Sports1M, 128 Rendered, 40 Monet2, 40 Trippy).
+- **Preprocessing.** First 3 frames (≈475 ms) discarded for response-onset lag; per-neuron trial
+  means computed per anatomical area. "Clean" features are residuals after regressing each neuron
+  on 4 pupil channels + treadmill velocity.
+- **Decoder.** `StandardScaler → LogisticRegression` (ℓ2, *C* = 1, balanced class weights),
+  balanced accuracy under 5-fold stratified CV.
+- **Population-size control.** Areas differ in recorded neuron count, which inflates accuracy
+  independently of coding quality. All cross-area comparisons are made at the matched count
+  *N*min (287–468 per session) over **50 random subsamples**.
+- **Statistics.** Shuffle-label nulls (100 permutations per cell); paired Wilcoxon signed-rank
+  across sessions, Bonferroni-corrected within question.
+- **Q2.** Session 5_6 (8,592 neurons; 384 natural trials; 72 timepoints; 468 neurons/area). Per-frame
+  response vectors decoded independently at each timepoint with LR and linear SVM.
+  **GroupKFold by clip hash** prevents the same clip appearing in train and test. Temporal averaging
+  tested at *w* = 5 frames.
+
+## Limitations
+
+Linear decoders cannot recover nonlinearly-formatted information — higher accuracy in LM means
+category information is more *linearly accessible* there, not that LM "represents" categories more
+than V1. Class counts are imbalanced (384 natural vs. 80 parametric), and *N*min varies across
+sessions, so within-session contrasts are matched but cross-session pooling is not.
+
+## Reproducing
+
 ```bash
-git lfs install
-git clone https://huggingface.co/datasets/NeuroBLab/MICrONS
-cd MICrONS
-pip install -r requirements.txt
+git clone https://github.com/annanotaro/<repo> && cd <repo>
+uv sync                      # or: pip install -r requirements.txt
+cp .env.example .env         # point DATA_PATH at microns.h5
+python main_runner.py --question 1
 ```
 
-### Option 2 — Programmatic download (no clone)
-```python
-import sys
-import importlib.util
-from huggingface_hub import hf_hub_download
+Data is pulled from [`NeuroBLab/MICrONS`](https://huggingface.co/datasets/NeuroBLab/MICrONS) on
+first run. See **[docs/DATASET.md](docs/DATASET.md)** for the HDF5 schema and the `MicronsReader` API.
 
-REPO_ID = "NeuroBLab/MICrONS"
+## Authors
 
-print("Downloading files from Hugging Face...")
-reader_path = hf_hub_download(repo_id=REPO_ID, filename="reader.py")
-data_path   = hf_hub_download(repo_id=REPO_ID, filename="microns.h5")
+Course research project supervised by **Prof. Alessandro Sanzeni**, Bocconi University
+(March–April 2026).
 
-spec = importlib.util.spec_from_file_location("reader", reader_path)
-reader_module = importlib.util.module_from_spec(spec)
-sys.modules["reader"] = reader_module
-spec.loader.exec_module(reader_module)
+Gaia Grossi · Max David · Leo Arthur Morvan · **Anna Notaro** · Beatrice Porta
 
-from reader import MicronsReader
+*Anna Notaro: Q1 in full — decoding pipeline, neuron-count-matched subsampling,
+behavioural regression, and the cross-area statistical comparisons (Figures 1–4).*
 
-with MicronsReader(data_path) as reader:
-    reader.print_structure(max_items=2)
-```
+## References
 
----
-
-## 🛠️ Reader API
-
-### Initialize
-```python
-from reader import MicronsReader
-
-with MicronsReader("microns.h5") as reader:
-    # all calls go here
-    pass
-```
-
-### Explore structure
-```python
-with MicronsReader("microns.h5") as reader:
-    # Tree view — SoftLinks are shown without dereferencing by default
-    reader.print_structure(max_items=3, follow_links=False)
-```
-
-### Query available metadata
-```python
-with MicronsReader("microns.h5") as reader:
-    # All stimulus types in the file
-    types = list(reader.f['types'].keys())          # ['Clip', 'Monet2', 'Trippy']
-
-    # All hashes for a given stimulus type
-    monet_hashes = reader.get_hashes_by_type('Monet2')
-
-    # All (or unique) hashes shown in a session
-    all_hashes    = reader.get_hashes_by_session('4_7')
-    unique_hashes = reader.get_hashes_by_session('4_7', return_unique=True)
-
-    # Brain areas recorded in a session, or all areas in the file
-    areas_in_session = reader.get_available_brain_areas('4_7')  # ['AL', 'LM', 'RL', 'V1']
-    all_areas        = reader.get_available_brain_areas()
-```
-
-### Load video + all associated trials
-
-`get_full_data_by_hash` is the primary access method. It aggregates the video and every neural/behavioral trial across all sessions that presented that stimulus.
-```python
-target_hash = "0JcYLY6eaQxNgD0AqyHf"
-
-with MicronsReader("microns.h5") as reader:
-    # Optionally filter responses to a single brain area
-    data = reader.get_full_data_by_hash(target_hash, brain_area='V1')
-
-    print(data['clip'].shape)       # (F, H, W)  — grayscale video frames
-    print(data['stim_type'])        # e.g. 'Clip'
-
-    for trial in data['trials']:
-        print(trial['session'])             # e.g. '4_7'
-        print(trial['trial_idx'])           # e.g. '12'
-        print(trial['responses'].shape)     # (N_V1_neurons, F)
-        print(trial['treadmill'].shape)     # (F,)   — running speed in cm/s
-        print(trial['pupil'].shape)         # (4, F) — rows: x, y, major_r, minor_r
-        print(trial['stim_times'].shape)    # (F,)   — absolute timestamps in seconds
-```
-
-### Load only neural responses
-```python
-with MicronsReader("microns.h5") as reader:
-    trials = reader.get_responses_by_hash(target_hash, brain_area='LM')
-    # Returns: [{'session': str, 'trial_idx': str, 'responses': np.array}, ...]
-```
-
-### Direct single-trial access
-```python
-with MicronsReader("microns.h5") as reader:
-    trial = reader.get_trial('4_7', trial_idx=12, brain_area='V1')
-    print(trial['responses'].shape)   # (N_V1_neurons, F)
-    print(trial['stim_times'])        # absolute timestamps for this trial
-```
-
-### Load only the video
-```python
-with MicronsReader("microns.h5") as reader:
-    clip, stim_type = reader.get_video_data("0JcYLY6eaQxNgD0AqyHf")
-    print(clip.shape)    # (F, H, W)
-    print(stim_type)     # 'Clip'
-```
-
----
-
-## 📝 Citation
-
-If you use this dataset or reader in your research, please cite the original MICrONS Phase 3 release and this repository.
+Stringer et al., *Nature* 2019 · Goltstein et al., *Nat. Neurosci.* 2021 · Chen et al., *PLOS Comp. Biol.* 2024 · Ding et al., *Nature* 2025 (MICrONS functional connectomics)
